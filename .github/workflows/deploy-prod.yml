@@ -22,7 +22,6 @@ jobs:
       - name: Compile CSS and Javascript
         run: npm install
           npm add -D sass
-          npm run build
           npm run dev
 
       - name: Configure php 8.1
