@@ -7,7 +7,7 @@
 @endforeach
 </div>
 @else
-<p>No specialist found</p>
+<p>Не знайдено</p>
 @endunless
 
 </x-layout>
