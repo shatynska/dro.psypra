@@ -10,7 +10,7 @@ env:
   SERVER_HOST: 185.233.36.64
   SERVER_USERNAME: root
   SERVER_PORT: 22
-  SERVER_PATH: /var/www/dro.psypra.com/dro.psypra.com/blue
+  SERVER_PATH: /var/www/dro.psypra.com/dro.psypra.com/green
 
 jobs:
   create-deployment-artifacts:
@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Compile CSS and Javascript
-        run: npm install
+        run: npm ci --only=production
           npm add -D sass
           npm run build
 
