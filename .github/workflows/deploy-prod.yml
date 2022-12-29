@@ -21,7 +21,11 @@ jobs:
 
       - name: Compile CSS and Javascript
         run: npm ci --only=production
+
+      - name: Add Sass
         run: npm add -D sass
+
+      - name: Npm build
         run: npm run build
 
       - name: Configure php 8.1
