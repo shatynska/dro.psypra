@@ -1,9 +1,9 @@
 <?php $attributes ??= new \Illuminate\View\ComponentAttributeBag; ?>
-<?php foreach($attributes->onlyProps(['specialist']) as $__key => $__value) {
+<?php foreach($attributes->onlyProps(['specialist', 'attributess']) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 } ?>
-<?php $attributes = $attributes->exceptProps(['specialist']); ?>
-<?php foreach (array_filter((['specialist']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+<?php $attributes = $attributes->exceptProps(['specialist', 'attributess']); ?>
+<?php foreach (array_filter((['specialist', 'attributess']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
     $$__key = $$__key ?? $__value;
 } ?>
 <?php $__defined_vars = get_defined_vars(); ?>
@@ -13,20 +13,17 @@
 <?php unset($__defined_vars); ?>
 
 <div>
-    <?php $attributesArray = [1, 3, 4, 5, 6] ?>
-
-    <?php $__currentLoopData = $attributesArray; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attributesItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-        <?php 
-        $attributes = DB::table('attributes')->find($attributesItem); 
-        $database = $attributes->database 
+    <?php $__currentLoopData = $attributess; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $attributesItem): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    
+    <?php 
+        $database = $attributesItem->database;
         ?>
 
         <div>
 
             <a href="<?php echo e(route('attributes.index', ['attributes' => $database ])); ?>" >
                 <h6>
-                    <?php echo e($attributes->title); ?>
+                    <?php echo e($attributesItem->title); ?>
 
                 </h6>
             </a>

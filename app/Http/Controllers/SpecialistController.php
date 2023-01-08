@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Specialist;
+use App\Models\Attribute;
 use App\Models\Specialty;
+use App\Models\Specialist;
 use Illuminate\Http\Request;
 
 class SpecialistController extends Controller
@@ -11,7 +12,7 @@ class SpecialistController extends Controller
     public function index()
     {
 
-        $specialists = Specialist::when(request('specialty'), function ($query) {
+        $specialists = Specialist::with('specialties')->when(request('specialty'), function ($query) {
             $query->whereRelation('specialties', 'id', request('specialty'));
         })
             ->inRandomOrder()
@@ -22,6 +23,8 @@ class SpecialistController extends Controller
 
     public function show(Specialist $specialist)
     {
-        return view('specialists.show', compact('specialist'));
+        $mainAttributes = Attribute::where('is_main_attribute', true)->get();
+
+        return view('specialists.show', compact('specialist', 'mainAttributes'));
     }
 }

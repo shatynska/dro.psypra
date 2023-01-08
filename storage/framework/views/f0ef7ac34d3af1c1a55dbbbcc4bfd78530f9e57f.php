@@ -28,28 +28,23 @@
     <div class="col-md-6 col-xl-4 my-4">
         <img src=<?php echo e(asset('images/'.$specialist->id.'_big.png')); ?> alt="" class="img-fluid my-2">
     </div>
-
-
     <div class="col-md-6 col-xl-4 my-4">
 
         <?php if (isset($component)) { $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4 = $component; } ?>
-<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.basic-attributes','data' => ['specialist' => $specialist]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
-<?php $component->withName('basic-attributes'); ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.main-attributes','data' => ['specialist' => $specialist,'mainAttributes' => $mainAttributes]] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('main-attributes'); ?>
 <?php if ($component->shouldRender()): ?>
 <?php $__env->startComponent($component->resolveView(), $component->data()); ?>
 <?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
-<?php $component->withAttributes(['specialist' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($specialist)]); ?>
+<?php $component->withAttributes(['specialist' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($specialist),'mainAttributes' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($mainAttributes)]); ?>
 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4)): ?>
 <?php $component = $__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4; ?>
 <?php unset($__componentOriginalc254754b9d5db91d5165876f9d051922ca0066f4); ?>
 <?php endif; ?>
-        
-
-
         
     </div>
 

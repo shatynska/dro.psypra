@@ -19,14 +19,9 @@
     <div class="col-md-6 col-xl-4 my-4">
         <img src={{ asset('images/'.$specialist->id.'_big.png') }} alt="" class="img-fluid my-2">
     </div>
-
-
     <div class="col-md-6 col-xl-4 my-4">
 
-        <x-basic-attributes :specialist="$specialist" />
-        
-
-
+        <x-main-attributes :$specialist :$mainAttributes />
         
     </div>
 
