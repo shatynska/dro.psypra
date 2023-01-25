@@ -17,7 +17,10 @@
 <div class="row">
     {{-- image --}}
     <div class="col-md-6 col-xl-4 my-4">
-        <img src={{ asset('images/'.$specialist->id.'_big.png') }} alt="" class="img-fluid my-2">
+        @if($specialist->user->getFirstMediaUrl('big_photos', 'big'))
+            <img src="{{ $specialist->user->getFirstMediaUrl('big_photos', 'big') }}" alt="" class="img-fluid my-2">
+        @endif
+        
     </div>
     <div class="col-md-6 col-xl-4 my-4">
 
