@@ -26,7 +26,7 @@
 <div class="row">
     
     <div class="col-md-6 col-xl-4 my-4">
-        <?php (dd($specialist->user->getFirstMediaUrl('big_photos', 'big'))); ?>
+        <?php dd($specialist->user->getFirstMedia('big_photos')); ?>
         <?php if($specialist->user->getFirstMediaUrl('big_photos', 'big')): ?>
             <img src="<?php echo e($specialist->user->getFirstMediaUrl('big_photos', 'big')); ?>" alt="" class="img-fluid my-2">
         <?php endif; ?>
