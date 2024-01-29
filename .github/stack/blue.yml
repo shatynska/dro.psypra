@@ -1,10 +1,8 @@
 version: '3.8'
 
 services:
-  money_psypra_com_blue:
+  dro_psypra_com_blue:
     image: shatynska/dro-psypra-com:latest
-    volumes:
-      - /var/www/dro.psypra.com/_docker/nginx/conf.d:/etc/nginx/conf.ds
     labels:
       - 'traefik.enable=true'
       - 'traefik.docker.network=traefik-public'
@@ -12,9 +10,9 @@ services:
       - 'traefik.http.routers.dro_psypra_com_blue.rule=Host(`dro.psypra.com`)'
       - 'traefik.http.routers.dro_psypra_com_blue.tls=true'
       - 'traefik.http.routers.dro_psypra_com_blue.tls.certresolver=letsEncrypt'
-      - 'traefik.http.services.dro_psypra_com_blue.loadbalancer.server.port=3010'
+      - 'traefik.http.services.dro_psypra_com_blue.loadbalancer.server.port=3000'
     ports:
-      - 3010:3010
+      - 3020:3000
     networks:
       - traefik-public
       - dro-psypra-com
