@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import logo from '/public/logo.svg';
+import logo from '/public/images/logo.svg';
 
 export function HeaderLogo() {
   return (
