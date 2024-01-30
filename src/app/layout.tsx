@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Manrope } from 'next/font/google';
+
+import { Header } from '~/widgets/header';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const manrope = Manrope({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'Психологи, психотерапевти та психіатри Дрогобиччини',
@@ -16,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={manrope.className}>
+        <div className="m-auto flex max-w-screen-lg flex-col justify-center">
+          <main>
+            <Header />
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   );
 }
