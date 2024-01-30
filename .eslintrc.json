@@ -1,7 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "@feature-sliced",
+    "@feature-sliced/eslint-config/rules/import-order/experimental"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"
+  },
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
   }
 }
