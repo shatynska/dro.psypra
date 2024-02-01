@@ -4,16 +4,6 @@ module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-      fontFamily: {
-        sans: ['"Manrope"'],
-      },
-    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',
@@ -64,6 +54,11 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
+      },
+      spacing: {
+        200: '50rem',
+        228: '72rem',
+        360: '90rem',
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

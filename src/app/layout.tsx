@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
+import { cn } from '~/shared/lib';
+
 import { Header } from '~/widgets/header';
+
 import './globals.css';
 
 const manrope = Manrope({ subsets: ['latin', 'cyrillic'] });
@@ -18,13 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={manrope.className}>
-        <div className="m-auto flex max-w-screen-lg flex-col justify-center">
-          <main>
-            <Header />
-            {children}
-          </main>
-        </div>
+      <body
+        className={cn('mx-auto flex max-w-360 flex-col', manrope.className)}
+      >
+        <Header />
+        {children}
       </body>
     </html>
   );
