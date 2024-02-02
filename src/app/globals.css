@@ -82,7 +82,7 @@
   header,
   footer,
   main > div {
-    @apply flex flex-col items-center justify-center bg-top bg-no-repeat px-2 sm:px-4 md:px-8;
+    @apply flex flex-col items-center justify-start bg-top bg-no-repeat px-2 sm:px-4 md:px-8;
   }
 
   header > div,

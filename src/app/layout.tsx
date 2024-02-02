@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
-import { cn } from '~/shared/lib';
-
 import { Header } from '~/widgets/header';
 
 import './globals.css';
@@ -21,11 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn('mx-auto flex max-w-360 flex-col', manrope.className)}
-      >
-        <Header />
-        {children}
+      <body className={manrope.className}>
+        <div className="mx-auto flex max-w-360 flex-col">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   );
