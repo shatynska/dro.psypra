@@ -115,7 +115,23 @@ const NavigationMenuIndicator = React.forwardRef<
 NavigationMenuIndicator.displayName =
   NavigationMenuPrimitive.Indicator.displayName;
 
-const NavigationMenuListItem = React.forwardRef<
+const NavigationMenuNestedList = React.forwardRef<
+  React.ElementRef<'ul'>,
+  React.ComponentPropsWithoutRef<'ul'>
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <ul
+      ref={ref}
+      className={cn('grid w-80 gap-2 p-4 md:w-112 md:grid-cols-2', className)}
+      {...props}
+    >
+      {children}
+    </ul>
+  );
+});
+NavigationMenuNestedList.displayName = 'NavigationMenuListItem';
+
+const NavigationMenuNestedListItem = React.forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, children, ...props }, ref) => {
@@ -139,7 +155,7 @@ const NavigationMenuListItem = React.forwardRef<
     </li>
   );
 });
-NavigationMenuListItem.displayName = 'NavigationMenuListItem';
+NavigationMenuNestedListItem.displayName = 'NavigationMenuListItem';
 
 export {
   NavigationMenu,
@@ -148,7 +164,8 @@ export {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuListItem,
+  NavigationMenuNestedList,
+  NavigationMenuNestedListItem,
   NavigationMenuTrigger,
   NavigationMenuViewport,
   navigationMenuTriggerStyle,

@@ -8,39 +8,40 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuListItem,
+  NavigationMenuNestedList,
+  NavigationMenuNestedListItem,
   NavigationMenuTrigger,
 } from '~/shared/ui';
 
 export function HeaderNavigation() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
+    <NavigationMenu className="hidden sm:flex">
+      <NavigationMenuList className="w-80 md:w-112">
         <NavigationMenuItem>
           <NavigationMenuTrigger>фахівці</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+            <NavigationMenuNestedList>
               {specialists.map((specialist) => (
-                <NavigationMenuListItem
+                <NavigationMenuNestedListItem
                   key={specialist.name}
                   title={specialist.name}
                   href={specialist.href}
                 >
                   {specialist.description}
-                </NavigationMenuListItem>
+                </NavigationMenuNestedListItem>
               ))}
-            </ul>
+            </NavigationMenuNestedList>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>про нас</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            <NavigationMenuNestedList className="md:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="flex h-full w-full select-none flex-col content-center items-center justify-end  rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    className="flex h-full w-full select-none flex-col content-center items-center justify-end rounded-md bg-gradient-to-b from-muted/20 to-muted p-6 no-underline focus:bg-muted focus:text-accent-foreground focus:outline-none"
                     href="/go"
                   >
                     <Logomark size="sm" />
@@ -54,32 +55,32 @@ export function HeaderNavigation() {
                 </NavigationMenuLink>
               </li>
               {documents.map((document) => (
-                <NavigationMenuListItem
+                <NavigationMenuNestedListItem
                   key={document.title}
                   title={document.title}
                   href={document.href}
                 >
                   {document.description}
-                </NavigationMenuListItem>
+                </NavigationMenuNestedListItem>
               ))}
-            </ul>
+            </NavigationMenuNestedList>
           </NavigationMenuContent>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuTrigger>інформація</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+            <NavigationMenuNestedList>
               {sections.map((section) => (
-                <NavigationMenuListItem
+                <NavigationMenuNestedListItem
                   key={section.title}
                   title={section.title}
                   href={section.href}
                 >
                   {section.description}
-                </NavigationMenuListItem>
+                </NavigationMenuNestedListItem>
               ))}
-            </ul>
+            </NavigationMenuNestedList>
           </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
