@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
 import { Header } from '~/widgets/header';
+import { Sidebar } from '~/widgets/sidebar';
 
 import './globals.css';
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <div className="mx-auto flex max-w-360 flex-col">
           <Header />
           {children}
+          <Sidebar />
         </div>
       </body>
     </html>
