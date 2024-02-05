@@ -9,7 +9,10 @@ import { SidebarNavigation } from './SidebarNavigation';
 export function Sidebar() {
   return (
     <Sheet>
-      <SheetTrigger className="fixed right-2 top-4 sm:hidden" asChild>
+      <SheetTrigger
+        className="fixed right-2 top-4 sm:right-4 md:hidden"
+        asChild
+      >
         <Button size="icon" variant="outline">
           <Menu />
         </Button>
