@@ -10,18 +10,18 @@ export default defineConfig({
   },
   resolve: {
     alias: [
-      { find: '~/app', replacement: resolve(__dirname, './src/app') },
-      { find: '~/pages', replacement: resolve(__dirname, './src/pages') },
-      { find: '~/widgets', replacement: resolve(__dirname, './src/widgets') },
+      { find: '~/app', replacement: resolve(__dirname, './src/1-app') },
+      { find: '~/pages', replacement: resolve(__dirname, './src/2-pages') },
+      { find: '~/widgets', replacement: resolve(__dirname, './src/3-widgets') },
       {
         find: '~/features',
-        replacement: resolve(__dirname, './src/features'),
+        replacement: resolve(__dirname, './src/4-features'),
       },
       {
         find: '~/entities',
-        replacement: resolve(__dirname, './src/entities'),
+        replacement: resolve(__dirname, './src/5-entities'),
       },
-      { find: '~/shared', replacement: resolve(__dirname, './src/shared') },
+      { find: '~/shared', replacement: resolve(__dirname, './src/6-shared') },
     ],
   },
 });
