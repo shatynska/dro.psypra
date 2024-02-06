@@ -11,6 +11,7 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: '~/app', replacement: resolve(__dirname, './src/app') },
+      { find: '~/pages', replacement: resolve(__dirname, './src/pages') },
       { find: '~/widgets', replacement: resolve(__dirname, './src/widgets') },
       {
         find: '~/features',
