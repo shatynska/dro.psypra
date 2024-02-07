@@ -39,7 +39,7 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        'blue-gradient-light': 'hsl(var(--red-gradient-dark))',
+        'blue-gradient-light': 'hsl(var(--blue-gradient-light))',
         'blue-gradient-dark': 'hsl(var(--blue-gradient-dark))',
         'red-gradient-light': 'hsl(var(--red-gradient-light))',
         'red-gradient-dark': 'hsl(var(--red-gradient-dark))',
