@@ -10,7 +10,7 @@ export function Sidebar() {
   return (
     <Sheet>
       <SheetTrigger
-        className="fixed right-2 top-2 sm:right-4 md:hidden"
+        className="fixed right-2 top-2 sm:right-4 lg:hidden"
         asChild
       >
         <Button size="icon" variant="outline">
