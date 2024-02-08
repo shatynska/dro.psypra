@@ -11,7 +11,7 @@ export function HeroSection() {
       <div className="absolute h-[620px] w-full bg-[url('/images/hero-purple-fon.svg')] bg-[left_-9.5rem_top_-2rem] bg-no-repeat sm:bg-[left_-2rem_top_-6rem] lg:h-[840px] lg:bg-[center_top_2rem]" />
       <div className="absolute top-[428px] h-64 w-full bg-gradient-to-t from-red-gradient-dark to-red-gradient-light sm:top-[560px] lg:hidden" />
 
-      <section className="z-50 flex h-[684px] flex-col gap-y-36 text-background sm:h-[816px] lg:h-[736px] lg:flex-row lg:content-between lg:justify-center lg:pt-36">
+      <section className="flex h-[684px] flex-col gap-y-36 text-background sm:h-[816px] lg:h-[736px] lg:flex-row lg:content-between lg:justify-center lg:pt-36">
         <div className="relative flex w-full flex-col items-center lg:w-auto">
           <div className="relative ml-2 mt-6 h-28 w-28 self-start lg:ml-72 lg:mt-0 lg:h-40 lg:w-52 lg:scale-100">
             <Image
