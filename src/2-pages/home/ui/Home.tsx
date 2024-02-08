@@ -1,12 +1,14 @@
 import { HeroSection } from './HeroSection';
+import { QuestionsSection } from './QuestionsSection';
+import { SpecialtiesSection } from './SpecialtiesSection';
 
 export function Home() {
   return (
     <main>
-      <HeroSection />
-      <section>
-        <h1>Психологи, психотерапевти та психіатри Дрогобиччини</h1>
-      </section>
+      <div>
+        <HeroSection />
+        <QuestionsSection />
+      </div>
     </main>
   );
 }
