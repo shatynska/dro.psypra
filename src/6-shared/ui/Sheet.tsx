@@ -67,7 +67,10 @@ const SheetContent = React.forwardRef<
       {...props}
     >
       {children}
-      <SheetPrimitive.Close className="fixed right-2 top-2 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary sm:right-4">
+      <SheetPrimitive.Close
+        className="fixed right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none data-[state=open]:bg-secondary sm:right-8"
+        autoFocus
+      >
         <Button size={'icon'} variant={'outline'} asChild>
           <X />
         </Button>

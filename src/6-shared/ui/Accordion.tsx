@@ -106,7 +106,7 @@ const AccordionTopListItem = React.forwardRef<
     </SheetClose>
   );
 });
-AccordionTopListItem.displayName = 'AccordionListItem';
+AccordionTopListItem.displayName = 'AccordionTopListItem';
 
 export {
   Accordion,
