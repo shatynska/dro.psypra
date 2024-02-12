@@ -1,8 +1,8 @@
 'use client';
 
 import { documents, sections, specialists } from '~/shared/api/mock';
+import { Logomark } from '~/shared/ui/Logomark';
 import {
-  Logomark,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -11,7 +11,7 @@ import {
   NavigationMenuNestedList,
   NavigationMenuNestedListItem,
   NavigationMenuTrigger,
-} from '~/shared/ui';
+} from '~/shared/ui/NavigationMenu';
 
 export function HeaderNavigation() {
   return (

@@ -6,8 +6,8 @@ import {
   AccordionListItem,
   AccordionTopListItem,
   AccordionTrigger,
-  Logomark,
-} from '~/shared/ui';
+} from '~/shared/ui/Accordion';
+import { Logomark } from '~/shared/ui/Logomark';
 
 export function SidebarNavigation() {
   return (

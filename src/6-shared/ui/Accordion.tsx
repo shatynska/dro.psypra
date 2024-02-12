@@ -7,7 +7,7 @@ import * as React from 'react';
 
 import { cn } from '../lib';
 
-import { SheetClose } from '.';
+import { SheetClose } from './Sheet';
 
 export const Accordion = AccordionPrimitive.Root;
 

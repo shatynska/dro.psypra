@@ -2,7 +2,8 @@
 
 import { Menu } from 'lucide-react';
 
-import { Button, Sheet, SheetContent, SheetTrigger } from '~/shared/ui';
+import { Button } from '~/shared/ui/Button';
+import { Sheet, SheetContent, SheetTrigger } from '~/shared/ui/Sheet';
 
 import { SidebarNavigation } from './SidebarNavigation';
 
