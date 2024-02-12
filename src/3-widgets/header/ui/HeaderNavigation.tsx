@@ -44,7 +44,7 @@ export function HeaderNavigation() {
                     className="flex h-full w-full select-none flex-col content-center items-center justify-end rounded-md bg-gradient-to-b from-muted/20 to-muted p-6 no-underline focus:bg-muted focus:text-accent-foreground focus:outline-none"
                     href="/go"
                   >
-                    <Logomark size="sm" />
+                    <Logomark />
                     <div className="mb-2 mt-4 text-center text-lg font-medium">
                       Психотерапевти Дрогобиччини
                     </div>

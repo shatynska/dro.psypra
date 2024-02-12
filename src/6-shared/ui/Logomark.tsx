@@ -7,25 +7,24 @@ import logomarkXs from '/public/images/logomark-xs.svg';
 import { cn } from '../lib';
 
 type Props = React.HTMLAttributes<HTMLImageElement> & {
-  size?: 'xs' | 'sm' | 'lg';
+  variant?: 'default' | 'header' | 'hero';
 };
 
-export function Logomark(props: Props) {
-  const { size = 'xs', className } = props;
+const variants = new Map([
+  ['default', logomarkSm],
+  ['header', logomarkXs],
+  ['hero', logomarkLg],
+]);
 
-  const sizes = new Map([
-    ['xs', logomarkXs],
-    ['sm', logomarkSm],
-    ['lg', logomarkLg],
-  ]);
-
-  const src = sizes.get(size);
-
+export function Logomark({ variant = 'default', className, ...props }: Props) {
   return (
     <Image
-      src={src}
+      src={variants.get(variant)}
       alt="Лого"
-      className={cn('object-contain', { className })}
+      className={cn('object-cover object-left-bottom', {
+        className,
+      })}
+      {...props}
     />
   );
 }

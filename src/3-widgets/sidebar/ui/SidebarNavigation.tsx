@@ -43,7 +43,7 @@ export function SidebarNavigation() {
           <ul>
             <AccordionListItem href="/go">
               <div className="flex flex-col content-center items-center justify-end rounded-md bg-gradient-to-b from-muted/20 to-muted p-6 text-foreground no-underline focus:bg-muted focus:text-accent-foreground focus:outline-none">
-                <Logomark size="sm" />
+                <Logomark />
                 <div className="mb-2 mt-4 text-center text-lg font-medium">
                   Психотерапевти Дрогобиччини
                 </div>
