@@ -1,13 +1,6 @@
-import { cn } from '~/shared/lib';
 import { Section } from '~/shared/ui/Section';
 
-type Props = {
-  className?: string;
-};
-
-export function QuestionsSection(props: Props) {
-  const { className } = props;
-
+export function QuestionsSection() {
   const headings = {
     main: 'Критерії пошуку',
     small: 'Багато питань?',
@@ -15,28 +8,19 @@ export function QuestionsSection(props: Props) {
   };
 
   return (
-    <Section
-      variant={'light'}
-      className={cn('', className)}
-      headings={headings}
-    >
-      <div className="flex flex-col items-center gap-4 font-bold text-primary *:flex *:w-full *:flex-col *:gap-4 lg:gap-16 *:lg:flex-row lg:*:gap-8 [&>ul]:text-lg lg:[&>ul]:text-3xl">
-        <ul className="justify-around">
-          <li>Хто є хто?</li>
-          <li>До кого звернутися?</li>
-          <li>З ким працюють?</li>
-        </ul>
-        <ul className="justify-around lg:justify-between">
-          <li>З чим звертатися?</li>
-          <li>Як довго?</li>
-          <li>Які методи роботи?</li>
-        </ul>
-        <ul className="justify-around">
-          <li>Скільки коштує?</li>
-          <li>Де зустрітися?</li>
-          <li>Коли зустріч?</li>
-        </ul>
-      </div>
+    <Section variant={'light'} headings={headings}>
+      <ul className="grid place-items-center gap-x-16 gap-y-4 text-lg font-bold text-primary lg:grid-cols-6 lg:gap-y-12 lg:text-2xl">
+        <li className="lg:col-span-2 lg:col-start-1">Хто є хто?</li>
+        <li className="lg:col-span-2 lg:col-start-3">До кого звернутися?</li>
+        <li className="lg:col-span-2 lg:col-start-5">З ким працюють?</li>
+        <li className="lg:col-span-2 lg:col-start-2">З чим звертатися?</li>
+        <li className="lg:col-span-2 lg:col-start-4">Як довго триватиме?</li>
+        <li className="lg:col-span-2 lg:col-start-1">Які методи роботи?</li>
+        <li className="lg:col-span-2 lg:col-start-3">Скільки коштує?</li>
+        <li className="lg:col-span-2 lg:col-start-5">Де проводиться?</li>
+        <li className="lg:col-span-2 lg:col-start-2">Коли приймають?</li>
+        <li className="lg:col-span-2 lg:col-start-4">Як зв&apos;язатися?</li>
+      </ul>
     </Section>
   );
 }
