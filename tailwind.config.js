@@ -62,8 +62,12 @@ module.exports = {
       spacing: {
         112: '28rem',
         128: '32rem',
-        200: '50rem',
-        228: '72rem',
+        144: '36rem',
+        160: '40rem',
+        192: '48rem',
+        224: '56rem',
+        256: '64rem',
+        288: '72rem',
         360: '90rem',
       },
       animation: {
