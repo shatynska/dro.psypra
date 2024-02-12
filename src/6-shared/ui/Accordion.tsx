@@ -9,9 +9,9 @@ import { cn } from '../lib';
 
 import { SheetClose } from '.';
 
-const Accordion = AccordionPrimitive.Root;
+export const Accordion = AccordionPrimitive.Root;
 
-const AccordionItem = React.forwardRef<
+export const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ className, ...props }, ref) => (
@@ -23,7 +23,7 @@ const AccordionItem = React.forwardRef<
 ));
 AccordionItem.displayName = 'AccordionItem';
 
-const AccordionTrigger = React.forwardRef<
+export const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
@@ -43,7 +43,7 @@ const AccordionTrigger = React.forwardRef<
 ));
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
-const AccordionContent = React.forwardRef<
+export const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
@@ -58,7 +58,7 @@ const AccordionContent = React.forwardRef<
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-const AccordionListItem = React.forwardRef<
+export const AccordionListItem = React.forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, href = '/', children, ...props }, ref) => {
@@ -85,7 +85,7 @@ const AccordionListItem = React.forwardRef<
 });
 AccordionListItem.displayName = 'AccordionListItem';
 
-const AccordionTopListItem = React.forwardRef<
+export const AccordionTopListItem = React.forwardRef<
   React.ElementRef<'a'>,
   React.ComponentPropsWithoutRef<'a'>
 >(({ className, title, href = '/', children, ...props }, ref) => {
@@ -107,12 +107,3 @@ const AccordionTopListItem = React.forwardRef<
   );
 });
 AccordionTopListItem.displayName = 'AccordionTopListItem';
-
-export {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionListItem,
-  AccordionTopListItem,
-  AccordionTrigger,
-};
