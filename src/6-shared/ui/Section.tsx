@@ -5,7 +5,7 @@ import { cn } from '~/shared/lib';
 import { SectionHeader } from './SectionHeader';
 
 const sectionVariants = cva(
-  'relative mt-12 mb-16 lg:mt-24 grid grid-rows-[8rem_28rem] items-center ',
+  'relative mt-24 mb-32 lg:mt-24 grid grid-rows-[8rem_28rem] items-center ',
   {
     variants: {
       variant: {
@@ -19,23 +19,29 @@ const sectionVariants = cva(
   },
 );
 
-export interface SectionProps
-  extends React.HTMLAttributes<HTMLElement>,
-    VariantProps<typeof sectionVariants> {
+export type SectionHeadings = {
   headings: {
     main: string;
     small?: string;
     big?: string;
   };
-}
+};
 
-export function Section(sectionProps: SectionProps) {
-  const { className, variant, children, headings, ...props } = sectionProps;
+type Props = React.HTMLAttributes<HTMLElement> &
+  VariantProps<typeof sectionVariants> &
+  SectionHeadings;
 
+export function Section({
+  className,
+  variant,
+  children,
+  headings,
+  ...props
+}: Props) {
   return (
     <section className={cn(sectionVariants({ variant, className }))} {...props}>
       <SectionHeader variant={variant} headings={headings} />
-      {children}
+      <div className="flex flex-col items-center">{children}</div>
     </section>
   );
 }
