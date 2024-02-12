@@ -37,7 +37,7 @@ export function HeroSection() {
             гобиччини
           </div>
 
-          <div className="col-span-full col-start-1 row-start-6 self-center text-center lg:col-span-1 lg:col-start-5 lg:row-start-1 lg:place-self-end">
+          <div className="col-span-full col-start-1 row-start-6 w-64 place-self-center text-center lg:col-span-1 lg:col-start-5 lg:row-start-1 lg:place-self-end">
             <HeadLine />
             <Button variant={'secondary'} className="text-md mt-6 font-bold">
               знайти фахівця

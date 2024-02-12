@@ -15,8 +15,8 @@ import {
 
 export function HeaderNavigation() {
   return (
-    <NavigationMenu className="hidden sm:flex">
-      <NavigationMenuList className="w-80 md:w-112">
+    <NavigationMenu>
+      <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>фахівці</NavigationMenuTrigger>
           <NavigationMenuContent>

@@ -5,7 +5,7 @@ import { cn } from '../lib';
 import { SectionHeader } from './SectionHeader';
 
 const sectionVariants = cva(
-  'relative mt-24 mb-32 lg:mt-24 grid grid-rows-[8rem_28rem] items-center ',
+  'relative mt-16 mb-32 lg:mt-24 grid grid-rows-[6rem_28rem] lg:grid-rows-[8rem_28rem] items-center ',
   {
     variants: {
       variant: {

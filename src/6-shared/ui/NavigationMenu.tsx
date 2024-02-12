@@ -12,7 +12,7 @@ export const NavigationMenu = React.forwardRef<
   <NavigationMenuPrimitive.Root
     ref={ref}
     className={cn(
-      'relative z-10 flex max-w-max flex-1 items-center justify-center',
+      'z-10 hidden max-w-max flex-1 items-center justify-center lg:relative lg:flex',
       className,
     )}
     {...props}
@@ -30,7 +30,7 @@ export const NavigationMenuList = React.forwardRef<
   <NavigationMenuPrimitive.List
     ref={ref}
     className={cn(
-      'group flex flex-1 list-none items-center justify-center space-x-1',
+      'group flex w-128 flex-1 list-none items-center justify-center space-x-1',
       className,
     )}
     {...props}
@@ -122,7 +122,7 @@ export const NavigationMenuNestedList = React.forwardRef<
   return (
     <ul
       ref={ref}
-      className={cn('grid w-80 gap-2 p-4 md:w-112 md:grid-cols-2', className)}
+      className={cn('grid w-128 grid-cols-2 gap-4 px-8 py-8', className)}
       {...props}
     >
       {children}
