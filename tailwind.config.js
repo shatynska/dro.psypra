@@ -68,13 +68,15 @@ module.exports = {
         224: '56rem',
         256: '64rem',
         288: '72rem',
-        360: '90rem',
+        384: '96rem',
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       lineClamp: {
+        7: '7',
+        8: '8',
         10: '10',
       },
     },

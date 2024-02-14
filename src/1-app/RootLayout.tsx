@@ -22,7 +22,7 @@ export function RootLayout({ children }: Props) {
           'relative bg-background leading-relaxed text-foreground',
         )}
       >
-        <div className="mx-auto flex max-w-360 flex-col">
+        <div className="mx-auto flex max-w-384 flex-col">
           <Header />
           <main className="relative flex flex-col">{children}</main>
           <Sidebar />
