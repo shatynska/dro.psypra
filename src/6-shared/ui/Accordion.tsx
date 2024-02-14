@@ -17,7 +17,7 @@ export const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn('my-2', className)}
+    className={cn('mb-2 last:mb-0', className)}
     {...props}
   />
 ));
@@ -69,7 +69,7 @@ export const AccordionListItem = React.forwardRef<
           ref={ref}
           href={href}
           className={cn(
-            'mx-4 my-1 block select-none space-y-1 rounded-md px-4 py-4 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none',
+            'mx-4 mb-1 block select-none space-y-1 rounded-md px-4 py-4 leading-none no-underline outline-none transition-colors last:mb-0 hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none',
             className,
           )}
           {...props}
