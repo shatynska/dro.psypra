@@ -5,7 +5,7 @@ import { cn } from '../lib';
 import { SectionHeader } from './SectionHeader';
 
 const sectionVariants = cva(
-  'relative mt-16 mb-32 lg:mt-24 grid grid-rows-[6rem_28rem] lg:grid-rows-[8rem_28rem] items-center ',
+  'relative grid-cols-1 py-12 lg:py-24 grid grid-rows-[6rem_22rem] lg:grid-rows-[8rem_20rem]',
   {
     variants: {
       variant: {
@@ -41,7 +41,9 @@ export function Section({
   return (
     <section className={cn(sectionVariants({ variant, className }))} {...props}>
       <SectionHeader variant={variant} headings={headings} />
-      <div className="flex flex-col items-center">{children}</div>
+      <div className="flex flex-col items-center justify-center">
+        {children}
+      </div>
     </section>
   );
 }
