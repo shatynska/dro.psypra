@@ -14,7 +14,7 @@ export function HeroSection() {
       <div className="absolute h-[26rem] w-full bg-[url('/images/hero-purple-fon.svg')] bg-[left_-10rem_top_-3rem] bg-no-repeat sm:h-128 sm:bg-[left_-2rem_top_-6rem] lg:top-32 lg:h-[46rem] lg:bg-[center_top]" />
       <div className="absolute top-[25.25rem] h-64 w-full bg-gradient-to-t from-red-gradient-dark to-red-gradient-light sm:top-128 lg:hidden" />
 
-      <section className="relative h-192 text-background">
+      <section className="relative text-background sm:h-192">
         <div className="grid grid-cols-[1fr_9.5rem_4.75rem_1rem_1fr] grid-rows-[6rem_7.75rem_2.75rem_2.75rem_5rem_16rem] content-center justify-center pt-4 sm:grid-cols-[1fr_14.25rem_7.25rem_1.75rem_1fr] sm:grid-rows-[6rem_11.75rem_4.25rem_4rem_5rem_16rem] lg:h-screen lg:max-h-192 lg:min-h-160 lg:grid-cols-[0_14.25rem_7.25rem__minmax(8rem,24rem)_16rem] lg:grid-rows-[8rem_11.75rem_4.25rem] lg:pt-32">
           <div className="absolute left-0 h-28 w-28 lg:relative lg:col-span-2 lg:col-start-3 lg:row-start-1 lg:h-32 lg:w-48">
             <Image
@@ -25,7 +25,7 @@ export function HeroSection() {
             />
           </div>
 
-          <Logotype className="col-span-2 col-start-3 row-start-2 self-end pb-5 text-xs sm:pb-6 sm:text-lg lg:text-xl" />
+          <Logotype className="col-span-2 col-start-3 row-start-2 self-end pb-5 text-xs sm:pb-6 sm:text-lg lg:text-xl lg:font-semibold" />
 
           <div className="relative col-span-4 col-start-2 row-span-2 row-start-2 flex h-[10.5rem] w-[14.25rem] items-end sm:h-64 sm:w-[21.5rem] sm:text-7xl">
             <Logomark variant="hero" />
@@ -37,11 +37,9 @@ export function HeroSection() {
             гобиччини
           </div>
 
-          <div className="col-span-full col-start-1 row-start-6 w-64 place-self-center text-center lg:col-span-1 lg:col-start-5 lg:row-start-1 lg:place-self-end">
-            <HeadLine />
-            <Button variant={'secondary'} className="text-md mt-6 font-bold">
-              знайти фахівця
-            </Button>
+          <div className="col-span-full col-start-1 row-start-6 w-64 place-self-center text-center lg:col-span-1 lg:col-start-5 lg:row-start-1">
+            <HeadLine className="mb-6" />
+            <Button variant={'secondary'}>знайти фахівця</Button>
           </div>
         </div>
       </section>
