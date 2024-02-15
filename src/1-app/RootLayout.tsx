@@ -24,7 +24,7 @@ export function RootLayout({ children }: Props) {
       >
         <div className="mx-auto flex max-w-384 flex-col">
           <Header />
-          <main className="relative flex flex-col">{children}</main>
+          <main className="relative flex flex-col lg:pt-16">{children}</main>
           <Sidebar />
         </div>
       </body>

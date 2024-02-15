@@ -6,7 +6,7 @@ import { SpecialtiesSection } from './SpecialtiesSection';
 export function Home() {
   return (
     <>
-      <div>
+      <div className="lg:-mt-16">
         <HeroSection />
         <QuestionsSection />
       </div>
