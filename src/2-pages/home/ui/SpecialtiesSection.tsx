@@ -28,7 +28,11 @@ export function SpecialtiesSection() {
   }, [api]);
 
   return (
-    <Section variant="dark" headings={headings}>
+    <Section
+      variant="dark"
+      headings={headings}
+      className="[&>div]:items-center"
+    >
       <CarouselWrapper
         variant={posts.length > 3 ? 'upward' : 'default'}
         setApi={setApi}
