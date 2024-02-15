@@ -1,7 +1,6 @@
 export const specialtiesSectionHeadings = {
-  main: 'Спеціальності',
-  small: 'Хто є хто?',
-  big: 'Хто?',
+  primary: 'Спеціальності',
+  secondary: 'Хто є хто?',
 };
 
 export const specialtiesSectionPosts = [
