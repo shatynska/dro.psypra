@@ -1,4 +1,4 @@
-import { documents, sections, specialists } from '~/shared/api/mock';
+import { categoriesLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
 import {
   Accordion,
   AccordionContent,
@@ -24,13 +24,13 @@ export function SidebarNavigation() {
         <AccordionTrigger>фахівці</AccordionTrigger>
         <AccordionContent>
           <ul>
-            {specialists.map((specialist) => (
+            {specialistsLinks.map((link) => (
               <AccordionListItem
-                key={specialist.title}
-                title={specialist.title}
-                href={specialist.href}
+                key={link.title}
+                title={link.title}
+                href={link.href}
               >
-                {specialist.description}
+                {link.description}
               </AccordionListItem>
             ))}
           </ul>
@@ -52,13 +52,13 @@ export function SidebarNavigation() {
                 </p>
               </div>
             </AccordionListItem>
-            {documents.map((document) => (
+            {goLinks.map((link) => (
               <AccordionListItem
-                key={document.title}
-                title={document.title}
-                href={document.href}
+                key={link.title}
+                title={link.title}
+                href={link.href}
               >
-                {document.description}
+                {link.description}
               </AccordionListItem>
             ))}
           </ul>
@@ -69,13 +69,13 @@ export function SidebarNavigation() {
         <AccordionTrigger>інформація</AccordionTrigger>
         <AccordionContent>
           <ul>
-            {sections.map((section) => (
+            {categoriesLinks.map((link) => (
               <AccordionListItem
-                key={section.title}
-                title={section.title}
-                href={section.href}
+                key={link.title}
+                title={link.title}
+                href={link.href}
               >
-                {section.description}
+                {link.description}
               </AccordionListItem>
             ))}
           </ul>

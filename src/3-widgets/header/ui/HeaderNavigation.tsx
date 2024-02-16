@@ -1,6 +1,6 @@
 'use client';
 
-import { documents, sections, specialists } from '~/shared/api/mock';
+import { categoriesLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
 import { Logomark } from '~/shared/ui/Logomark';
 import {
   NavigationMenu,
@@ -21,13 +21,13 @@ export function HeaderNavigation() {
           <NavigationMenuTrigger>фахівці</NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuNestedList>
-              {specialists.map((specialist) => (
+              {specialistsLinks.map((link) => (
                 <NavigationMenuNestedListItem
-                  key={specialist.title}
-                  title={specialist.title}
-                  href={specialist.href}
+                  key={link.title}
+                  title={link.title}
+                  href={link.href}
                 >
-                  {specialist.description}
+                  {link.description}
                 </NavigationMenuNestedListItem>
               ))}
             </NavigationMenuNestedList>
@@ -54,13 +54,13 @@ export function HeaderNavigation() {
                   </a>
                 </NavigationMenuLink>
               </li>
-              {documents.map((document) => (
+              {goLinks.map((link) => (
                 <NavigationMenuNestedListItem
-                  key={document.title}
-                  title={document.title}
-                  href={document.href}
+                  key={link.title}
+                  title={link.title}
+                  href={link.href}
                 >
-                  {document.description}
+                  {link.description}
                 </NavigationMenuNestedListItem>
               ))}
             </NavigationMenuNestedList>
@@ -71,13 +71,13 @@ export function HeaderNavigation() {
           <NavigationMenuTrigger>інформація</NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuNestedList>
-              {sections.map((section) => (
+              {categoriesLinks.map((link) => (
                 <NavigationMenuNestedListItem
-                  key={section.title}
-                  title={section.title}
-                  href={section.href}
+                  key={link.title}
+                  title={link.title}
+                  href={link.href}
                 >
-                  {section.description}
+                  {link.description}
                 </NavigationMenuNestedListItem>
               ))}
             </NavigationMenuNestedList>

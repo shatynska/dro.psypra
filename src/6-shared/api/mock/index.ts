@@ -1,7 +1,7 @@
 export * from './category.mock';
-export { memberItems, membersHeadings } from './members.mock';
-export { documents, sections, specialists } from './navigation';
-export { postsHeadings } from './posts.mock';
-export { questionsHeadings } from './questions.mock';
-export { specialistsHeadings } from './specialists.mock';
-export { specialtiesHeadings, specialtyItems } from './specialties.mock';
+export * from './members.mock';
+export * from './navigation';
+export * from './posts.mock';
+export * from './questions.mock';
+export * from './specialists.mock';
+export * from './specialties.mock';

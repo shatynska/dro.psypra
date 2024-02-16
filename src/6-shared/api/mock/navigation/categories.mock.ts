@@ -1,4 +1,4 @@
-export const sections = [
+export const categoriesLinks = [
   {
     title: 'Спеціальності',
     href: '/specialties',

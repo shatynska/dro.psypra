@@ -1,4 +1,4 @@
-export const documents = [
+export const goLinks = [
   {
     title: 'Візитівка',
     href: '/go/members',
