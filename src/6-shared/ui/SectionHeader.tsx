@@ -2,7 +2,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 
 import { cn } from '../lib';
 
-const sectionVariants = cva('*:w-full h-full', {
+const sectionHeaderVariants = cva('*:w-full h-full', {
   variants: {
     variant: {
       light: 'lg:*:text-end lg:*:pl-0 font-bold',
@@ -15,15 +15,14 @@ const sectionVariants = cva('*:w-full h-full', {
 });
 
 export type SectionHeadings = {
-  headings: {
-    primary: string;
-    secondary: string;
-  };
+  primary: string;
+  secondary: string;
 };
 
 type Props = React.HTMLAttributes<HTMLElement> &
-  VariantProps<typeof sectionVariants> &
-  SectionHeadings;
+  VariantProps<typeof sectionHeaderVariants> & {
+    headings: SectionHeadings;
+  };
 
 export function SectionHeader({
   className,
@@ -33,7 +32,10 @@ export function SectionHeader({
   ...props
 }: Props) {
   return (
-    <section className={cn(sectionVariants({ variant, className }))} {...props}>
+    <section
+      className={cn(sectionHeaderVariants({ variant, className }))}
+      {...props}
+    >
       <div className="mb-1 px-6 opacity-70 lg:mb-3 lg:px-12 lg:text-xl">
         {headings.secondary}
       </div>

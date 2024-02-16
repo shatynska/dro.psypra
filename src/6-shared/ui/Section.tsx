@@ -20,8 +20,9 @@ const sectionVariants = cva(
 );
 
 type Props = React.HTMLAttributes<HTMLElement> &
-  VariantProps<typeof sectionVariants> &
-  SectionHeadings;
+  VariantProps<typeof sectionVariants> & {
+    headings: SectionHeadings;
+  };
 
 export function Section({
   className,
