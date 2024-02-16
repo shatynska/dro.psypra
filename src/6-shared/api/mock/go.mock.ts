@@ -1,6 +1,14 @@
 export const membersHeadings = {
-  primary: 'Члени спілки',
-  secondary: 'Візитівка',
+  primary: 'Візитівка',
+  secondary: 'Громадська організація',
+};
+export const methodsHeadings = {
+  primary: 'Методи',
+  secondary: 'Громадська організація',
+};
+export const programsHeadings = {
+  primary: 'Програми',
+  secondary: 'Громадська організація',
 };
 
 export const memberItems = [
