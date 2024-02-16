@@ -6,7 +6,7 @@ const sectionHeaderVariants = cva('*:w-full h-full', {
   variants: {
     variant: {
       light: 'lg:*:text-end lg:*:pl-0 font-bold',
-      dark: '*:text-start *:pr-0 font-semibold',
+      dark: '*:text-start *:pr-0 font-medium',
     },
   },
   defaultVariants: {

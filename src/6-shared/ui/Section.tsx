@@ -5,7 +5,7 @@ import { cn } from '../lib';
 import { SectionHeader, type SectionHeadings } from './SectionHeader';
 
 const sectionVariants = cva(
-  'relative h-full grid-cols-1 py-12 lg:py-24 grid grid-rows-[6rem_22rem] lg:grid-rows-[8rem_20rem]',
+  'relative h-full grid-cols-1 py-12 lg:py-24 grid grid-rows-[6rem_minmax(22rem,auto)] lg:grid-rows-[8rem_minmax(20rem,auto)]',
   {
     variants: {
       variant: {
