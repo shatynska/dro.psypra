@@ -1,4 +1,4 @@
-export const questionsSectionHeadings = {
+export const questionsHeadings = {
   primary: 'Критерії пошуку',
   secondary: 'Багато питань?',
 };

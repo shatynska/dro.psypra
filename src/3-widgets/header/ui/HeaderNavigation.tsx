@@ -23,8 +23,8 @@ export function HeaderNavigation() {
             <NavigationMenuNestedList>
               {specialists.map((specialist) => (
                 <NavigationMenuNestedListItem
-                  key={specialist.name}
-                  title={specialist.name}
+                  key={specialist.title}
+                  title={specialist.title}
                   href={specialist.href}
                 >
                   {specialist.description}

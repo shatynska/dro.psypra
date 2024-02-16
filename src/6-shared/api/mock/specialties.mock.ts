@@ -1,9 +1,9 @@
-export const specialtiesSectionHeadings = {
+export const specialtiesHeadings = {
   primary: 'Спеціальності',
   secondary: 'Хто є хто?',
 };
 
-export const specialtiesSectionPosts = [
+export const specialtyItems = [
   {
     title: 'Психолог',
     content:

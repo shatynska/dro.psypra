@@ -1,11 +1,11 @@
-import { questionsSectionHeadings as headings } from '~/shared/api/mock';
+import { questionsHeadings } from '~/shared/api/mock';
 import { Section } from '~/shared/ui/Section';
 
 export function QuestionsSection() {
   return (
     <Section
       variant={'light'}
-      headings={headings}
+      headings={questionsHeadings}
       className="[&>div]:items-center"
     >
       <ul className="flex w-full flex-col flex-wrap justify-center gap-x-24 whitespace-nowrap pl-12 sm:pl-16 lg:flex-row lg:items-center lg:gap-y-4 lg:pl-0 lg:text-xl lg:font-bold [&>div]:h-0 [&>div]:basis-full [&_li]:pb-2">

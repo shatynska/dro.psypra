@@ -1,12 +1,12 @@
-import { membersHeadings as headings, members } from '~/shared/api/mock';
+import { memberItems, membersHeadings } from '~/shared/api/mock';
 import { Section } from '~/shared/ui/Section';
 
 export function Members() {
   return (
     <div>
-      <Section variant={'light'} headings={headings}>
+      <Section variant={'light'} headings={membersHeadings}>
         <div>
-          {members.map((member) => (
+          {memberItems.map((member) => (
             <div key={member.name} className="pb-8">
               <h3 className="pb-2 text-lg font-bold lg:text-xl">
                 {member.name}

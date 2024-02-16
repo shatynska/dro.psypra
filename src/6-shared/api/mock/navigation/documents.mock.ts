@@ -1,10 +1,4 @@
-type Document = {
-  title: string;
-  href: string;
-  description: string;
-};
-
-export const documents: Document[] = [
+export const documents = [
   {
     title: 'Візитівка',
     href: '/go/members',

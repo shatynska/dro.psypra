@@ -26,8 +26,8 @@ export function SidebarNavigation() {
           <ul>
             {specialists.map((specialist) => (
               <AccordionListItem
-                key={specialist.name}
-                title={specialist.name}
+                key={specialist.title}
+                title={specialist.title}
                 href={specialist.href}
               >
                 {specialist.description}

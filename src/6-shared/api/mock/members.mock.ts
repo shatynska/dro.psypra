@@ -3,7 +3,7 @@ export const membersHeadings = {
   secondary: 'Візитівка',
 };
 
-export const members = [
+export const memberItems = [
   {
     name: 'Созанська Ірина',
     specialties:

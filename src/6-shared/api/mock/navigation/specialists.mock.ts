@@ -1,72 +1,66 @@
-type Specialist = {
-  name: string;
-  href: string;
-  description: string;
-};
-
-export const specialists: Specialist[] = [
+export const specialists = [
   {
-    name: 'Берчук Володимир',
+    title: 'Берчук Володимир',
     href: '/specialists/2',
     description: 'психолог, психотерапевт',
   },
   {
-    name: 'Білас Юлія',
+    title: 'Білас Юлія',
     href: '/specialists/3',
     description: 'психолог',
   },
   {
-    name: 'Гамбарова Еляна',
+    title: 'Гамбарова Еляна',
     href: '/specialists/4',
     description: 'психолог',
   },
   {
-    name: 'Дробчак Ольга',
+    title: 'Дробчак Ольга',
     href: '/specialists/5',
     description: 'психолог, психотерапевт',
   },
   {
-    name: 'Коцюба Галина',
+    title: 'Коцюба Галина',
     href: '/specialists/6',
     description: 'психолог',
   },
   {
-    name: 'Наталя Лех',
+    title: 'Наталя Лех',
     href: '/specialists/7',
     description: 'психіатр, психотерапевт',
   },
   {
-    name: 'Некрасова Валентина',
+    title: 'Некрасова Валентина',
     href: '/specialists/8',
     description: 'психолог, психотерапевт',
   },
   {
-    name: 'Паращак Надія',
+    title: 'Паращак Надія',
     href: '/specialists/9',
     description: 'психіарт',
   },
   {
-    name: 'Петришин Ольга',
+    title: 'Петришин Ольга',
     href: '/specialists/10',
     description: 'психотерапевт',
   },
   {
-    name: 'Созанська Ірина',
+    title: 'Созанська Ірина',
     href: '/specialists/1',
     description: 'психотерапевт',
   },
   {
-    name: 'Франчук Тетяна',
+    title: 'Франчук Тетяна',
     href: '/specialists/11',
     description: 'психіатр, невропатолог',
   },
   {
-    name: 'Чапля Уляна',
+    title: 'Чапля Уляна',
     href: '/specialists/12',
     description: 'психолог',
   },
   {
-    name: 'Шатинська Олена',
+    title: 'Шатинська Олена',
     href: '/specialists/13',
     description: 'психолог, психотерапевт',
   },

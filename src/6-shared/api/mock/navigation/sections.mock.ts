@@ -1,10 +1,4 @@
-type Section = {
-  title: string;
-  href: string;
-  description: string;
-};
-
-export const sections: Section[] = [
+export const sections = [
   {
     title: 'Спеціальності',
     href: '/specialties',
