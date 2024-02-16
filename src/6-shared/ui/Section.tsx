@@ -12,9 +12,14 @@ const sectionVariants = cva(
         light: 'text-foreground',
         dark: 'text-background ',
       },
+      height: {
+        fixed: '[&>div]:align-center',
+        default: '',
+      },
     },
     defaultVariants: {
       variant: 'light',
+      height: 'default',
     },
   },
 );
@@ -27,6 +32,7 @@ type Props = React.HTMLAttributes<HTMLElement> &
 export function Section({
   className,
   variant,
+  height,
   children,
   headings,
   ...props
@@ -34,7 +40,7 @@ export function Section({
   return (
     <section className={cn(sectionVariants({ variant, className }))} {...props}>
       <SectionHeader variant={variant} headings={headings} />
-      <div className="flex h-full justify-center">{children}</div>
+      <div className="flex flex-col justify-center">{children}</div>
     </section>
   );
 }
