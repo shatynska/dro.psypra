@@ -1,5 +1,5 @@
 import { Category, CategoryAlias, categories } from '~/shared/api/mock';
-import { Card, CardContent, CardHeader, CardTitle } from '~/shared/ui/Card';
+import { Article } from '~/shared/ui/Article';
 import { Section } from '~/shared/ui/Section';
 import { SectionGroup } from '~/shared/ui/SectionGroup';
 
@@ -19,14 +19,10 @@ export function Category({ alias }: Props) {
       <div>
         <Section variant={'light'} headings={headings}>
           {items.map((item) => (
-            <Card key={item.title}>
-              <CardHeader>
-                <CardTitle>{item.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="line-clamp-10 text-justify md:hyphens-none md:text-left lg:line-clamp-7">
-                {item.content}
-              </CardContent>
-            </Card>
+            <Article key={item.title}>
+              <h2>{item.title}</h2>
+              <div>{item.content}</div>
+            </Article>
           ))}
         </Section>
       </div>
