@@ -1,7 +1,7 @@
 name: Deploy
 
 env:
-  ENVIROMENT: blue
+  ENVIROMENT: green
 
 on:
   push:
@@ -47,7 +47,7 @@ jobs:
         with:
           envkey_VITE_API_BASE_URL: 'https://dro.psypra.com'
           envkey_VITE_API_WITH_MSW: true
-          
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
