@@ -9,7 +9,7 @@ import { Logotype } from '~/shared/ui/Logotype';
 
 export function HeroSection() {
   return (
-    <>
+    <div className="lg:-mt-16">
       <div className="absolute h-[41.25rem] w-full bg-gradient-to-b from-red-gradient-dark to-red-gradient-light sm:h-192 lg:bg-gradient-to-t" />
       <div className="absolute h-[26rem] w-full bg-[url('/images/hero-purple-fon.svg')] bg-[left_-10rem_top_-3rem] bg-no-repeat sm:h-128 sm:bg-[left_-2rem_top_-6rem] lg:top-32 lg:h-[46rem] lg:bg-[center_top]" />
       <div className="absolute top-[25.25rem] h-64 w-full bg-gradient-to-t from-red-gradient-dark to-red-gradient-light sm:top-128 lg:hidden" />
@@ -43,6 +43,6 @@ export function HeroSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
