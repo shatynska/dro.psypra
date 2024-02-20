@@ -1,12 +1,8 @@
-'use client';
-
-import { categories } from '~/shared/api/mock';
+import { useGetTermsControllerExecuteSuspense } from '~/shared/api';
 import { Section } from '~/shared/ui/Section';
-import { SectionHeadings } from '~/shared/ui/SectionHeader';
 
 export function TermsSection() {
-  // TODO Fix types
-  const headings = categories.get('terms')?.headings as SectionHeadings;
+  const { headings, href, items } = useGetTermsControllerExecuteSuspense();
 
-  return <Section variant="dark" headings={headings}></Section>;
+  return <Section variant="dark" headings={headings} href={href}></Section>;
 }

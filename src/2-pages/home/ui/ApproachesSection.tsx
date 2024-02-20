@@ -1,12 +1,8 @@
-'use client';
-
-import { categories } from '~/shared/api/mock';
+import { useGetApproachesControllerExecuteSuspense } from '~/shared/api';
 import { Section } from '~/shared/ui/Section';
-import { SectionHeadings } from '~/shared/ui/SectionHeader';
 
 export function ApproachesSection() {
-  // TODO Fix types
-  const headings = categories.get('approaches')?.headings as SectionHeadings;
+  const { headings, href, items } = useGetApproachesControllerExecuteSuspense();
 
-  return <Section headings={headings}></Section>;
+  return <Section headings={headings} href={href}></Section>;
 }

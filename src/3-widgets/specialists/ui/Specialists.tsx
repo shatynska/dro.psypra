@@ -1,6 +1,9 @@
-import { specialistsHeadings } from '~/shared/api/mock';
+import { useGetSpecialistsControllerExecuteSuspense } from '~/shared/api';
 import { Section } from '~/shared/ui/Section';
 
 export function Specialists() {
-  return <Section headings={specialistsHeadings}></Section>;
+  const { headings, href, items } =
+    useGetSpecialistsControllerExecuteSuspense();
+
+  return <Section headings={headings}></Section>;
 }

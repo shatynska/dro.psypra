@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { specialtiesHeadings, specialtyItems } from '~/shared/api/mock';
+import { useGetSpecialtiesControllerExecuteSuspense } from '~/shared/api';
 import { cn } from '~/shared/lib';
 import { Card, CardContent, CardHeader, CardTitle } from '~/shared/ui/Card';
 import { CarouselApi, CarouselItem } from '~/shared/ui/Carousel';
@@ -10,6 +10,9 @@ import { CarouselWrapper } from '~/shared/ui/CarouselWrapper';
 import { Section } from '~/shared/ui/Section';
 
 export function SpecialtiesSection() {
+  const { headings, href, items } =
+    useGetSpecialtiesControllerExecuteSuspense();
+
   const [api, setApi] = useState<CarouselApi>();
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -25,12 +28,12 @@ export function SpecialtiesSection() {
   }, [api]);
 
   return (
-    <Section variant="dark" height="fixed" headings={specialtiesHeadings}>
+    <Section variant="dark" height="fixed" headings={headings} href={href}>
       <CarouselWrapper
-        variant={specialtyItems.length > 3 ? 'upward' : 'default'}
+        variant={items.length > 3 ? 'upward' : 'default'}
         setApi={setApi}
       >
-        {specialtyItems.map((specialty, index) => (
+        {items.map((specialty, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <Card
               key={specialty.title}

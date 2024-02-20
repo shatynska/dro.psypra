@@ -1,8 +1,8 @@
-import { postsHeadings } from '~/shared/api/mock';
+import { useGetPostsControllerExecuteSuspense } from '~/shared/api';
 import { Section } from '~/shared/ui/Section';
 
 export function Posts() {
-  return (
-    <Section variant="dark" height="fixed" headings={postsHeadings}></Section>
-  );
+  const { headings, items } = useGetPostsControllerExecuteSuspense();
+
+  return <Section variant="dark" height="fixed" headings={headings}></Section>;
 }
