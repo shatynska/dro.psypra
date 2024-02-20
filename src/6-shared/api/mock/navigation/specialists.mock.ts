@@ -11,7 +11,7 @@ export const specialistsLinks = [
   },
   {
     title: 'Гамбарова Еляна',
-    href: '/specialists/gambarova',
+    href: '/specialists/hambarova',
     description: 'психолог',
   },
   {
@@ -21,12 +21,12 @@ export const specialistsLinks = [
   },
   {
     title: 'Коцюба Галина',
-    href: '/specialists/kocyuba',
+    href: '/specialists/kotsiuba',
     description: 'психолог',
   },
   {
     title: 'Наталя Лех',
-    href: '/specialists/leh',
+    href: '/specialists/lekh',
     description: 'психіатр, психотерапевт',
   },
   {
@@ -56,7 +56,7 @@ export const specialistsLinks = [
   },
   {
     title: 'Чапля Уляна',
-    href: '/specialists/chaplya',
+    href: '/specialists/chaplia',
     description: 'психолог',
   },
   {
