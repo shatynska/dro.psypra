@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 import { useGetSpecialtiesControllerExecuteSuspense } from '~/shared/api';
@@ -35,23 +36,25 @@ export function SpecialtiesSection() {
       >
         {items.map((specialty, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <Card
-              key={specialty.title}
-              className={cn(
-                selectedIndex >= index
-                  ? 'lg:mt-20'
-                  : selectedIndex === index - 1
-                    ? 'lg:mt-10'
-                    : 'lg:mt-0',
-              )}
-            >
-              <CardHeader>
-                <CardTitle>{specialty.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="line-clamp-10 text-justify md:hyphens-none md:text-left lg:line-clamp-7">
-                {specialty.content}
-              </CardContent>
-            </Card>
+            <Link href={`${href}/${specialty.alias}`}>
+              <Card
+                key={specialty.title}
+                className={cn(
+                  selectedIndex >= index
+                    ? 'lg:mt-20'
+                    : selectedIndex === index - 1
+                      ? 'lg:mt-10'
+                      : 'lg:mt-0',
+                )}
+              >
+                <CardHeader>
+                  <CardTitle>{specialty.title}</CardTitle>
+                </CardHeader>
+                <CardContent className="line-clamp-10 text-justify md:hyphens-none md:text-left lg:line-clamp-7">
+                  {specialty.content}
+                </CardContent>
+              </Card>
+            </Link>
           </CarouselItem>
         ))}
       </CarouselWrapper>
