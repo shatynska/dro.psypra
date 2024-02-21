@@ -25,10 +25,11 @@ export function Dimension({ alias }: Props) {
       <div>
         <Section variant={'light'} headings={headings}>
           {items.map((item) => (
-            <Article key={item.title}>
-              <h2>{item.title}</h2>
-              <div>{item.content}</div>
-            </Article>
+            <Link key={item.title} href={`${href}/${item.alias}`}>
+              <Article title={item.title}>
+                {item.content && parse(DOMPurify.sanitize(item.content))}
+              </Article>
+            </Link>
           ))}
         </Section>
       </div>
