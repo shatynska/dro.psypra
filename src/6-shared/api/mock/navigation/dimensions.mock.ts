@@ -1,4 +1,4 @@
-export const categoriesLinks = [
+export const dimensionsLinks = [
   {
     title: 'Спеціальності',
     href: '/specialties',

@@ -1,4 +1,11 @@
-import { Category, CategoryAlias, categories } from '~/shared/api/mock';
+import parse from 'html-react-parser';
+import DOMPurify from 'isomorphic-dompurify';
+import Link from 'next/link';
+
+import {
+  DimensionAlias,
+  useGetDimensionControllerExecuteSuspense,
+} from '~/shared/api';
 import { Article } from '~/shared/ui/Article';
 import { Section } from '~/shared/ui/Section';
 import { SectionGroup } from '~/shared/ui/SectionGroup';
@@ -7,13 +14,12 @@ import { Posts } from '~/widgets/posts';
 import { Specialists } from '~/widgets/specialists';
 
 type Props = {
-  alias: CategoryAlias;
+  alias: DimensionAlias;
 };
 
-export function Category({ alias }: Props) {
-  //TODO Fix types
-  const { headings, items } = categories.get(alias) as Category;
-
+export function Dimension({ alias }: Props) {
+  const { headings, href, items } =
+    useGetDimensionControllerExecuteSuspense(alias);
   return (
     <>
       <div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { categoriesLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
+import { dimensionsLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
 import { Logomark } from '~/shared/ui/Logomark';
 import {
   NavigationMenu,
@@ -71,7 +71,7 @@ export function HeaderNavigation() {
           <NavigationMenuTrigger>інформація</NavigationMenuTrigger>
           <NavigationMenuContent>
             <NavigationMenuNestedList>
-              {categoriesLinks.map((link) => (
+              {dimensionsLinks.map((link) => (
                 <NavigationMenuNestedListItem
                   key={link.title}
                   title={link.title}

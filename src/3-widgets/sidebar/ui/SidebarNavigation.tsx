@@ -1,4 +1,4 @@
-import { categoriesLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
+import { dimensionsLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
 import {
   Accordion,
   AccordionContent,
@@ -69,7 +69,7 @@ export function SidebarNavigation() {
         <AccordionTrigger>інформація</AccordionTrigger>
         <AccordionContent>
           <ul>
-            {categoriesLinks.map((link) => (
+            {dimensionsLinks.map((link) => (
               <AccordionListItem
                 key={link.title}
                 title={link.title}

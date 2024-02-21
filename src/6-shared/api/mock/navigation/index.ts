@@ -1,3 +1,3 @@
+export * from './dimensions.mock';
 export * from './go.mock';
-export * from './categories.mock';
 export * from './specialists.mock';
