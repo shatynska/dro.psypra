@@ -11,7 +11,7 @@ export function Sidebar() {
   return (
     <Sheet>
       <SheetTrigger
-        className="fixed right-4 top-4 sm:right-8 lg:hidden"
+        className="fixed right-4 top-4 z-50 sm:right-8 lg:hidden"
         autoFocus
         asChild
       >

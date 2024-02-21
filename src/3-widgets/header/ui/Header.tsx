@@ -6,7 +6,7 @@ import { HeaderNavigation } from './HeaderNavigation';
 
 export function Header() {
   return (
-    <header className="absolute left-0 top-0 z-10 hidden h-32 w-full bg-[url('/images/header-fon.svg')] pt-4 text-background lg:flex">
+    <header className="absolute left-0 top-0 z-10 flex h-32 w-full bg-gradient-to-b from-blue-gradient-dark to-blue-gradient-light bg-[length:100%_6rem] pt-4 text-background lg:bg-[url('/images/header-fon.svg')] lg:bg-[length:auto]">
       <div className="flex h-14 items-center justify-between">
         <Link href="/">
           <Logo variant="header" />
