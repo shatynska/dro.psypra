@@ -1,5 +1,5 @@
-import { TemporaryHome } from '~/pages/home';
+import { Home } from '~/pages/home';
 
 export default function HomePage() {
-  return <TemporaryHome />;
+  return <Home />;
 }
