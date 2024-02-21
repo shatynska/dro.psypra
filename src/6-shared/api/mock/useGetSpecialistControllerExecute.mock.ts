@@ -1,7 +1,10 @@
-import {
-  useGetSpecialistsControllerExecuteSuspense,
-  type Specialist,
-} from './';
+import { useGetSpecialistsControllerExecuteSuspense } from './';
+
+export type Specialist = {
+  alias: string;
+  title: string;
+  specialties: string[];
+};
 
 export function useGetSpecialistControllerExecuteSuspense(alias: string) {
   const specialist = useGetSpecialistsControllerExecuteSuspense().items.find(

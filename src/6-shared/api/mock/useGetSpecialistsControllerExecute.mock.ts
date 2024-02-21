@@ -1,8 +1,3 @@
-export type Specialist = {
-  alias: string;
-  title: string;
-  specialties: string[];
-};
 export function useGetSpecialistsControllerExecuteSuspense() {
   return {
     headings: {
