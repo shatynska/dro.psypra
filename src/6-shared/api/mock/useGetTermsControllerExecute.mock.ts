@@ -5,6 +5,19 @@ export function useGetTermsControllerExecuteSuspense() {
       secondary: 'Як довго триватиме?',
     },
     href: '/terms',
-    items: [],
+    items: [
+      {
+        alias: '1',
+        headings: { primary: 'Разові консультації', secondary: '' },
+      },
+      {
+        alias: '2',
+        headings: { primary: 'Короткотривала психотерапія', secondary: '' },
+      },
+      {
+        alias: '3',
+        headings: { primary: 'Довготвривала психотерапія', secondary: '' },
+      },
+    ],
   };
 }
