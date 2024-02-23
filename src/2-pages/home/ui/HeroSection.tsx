@@ -2,7 +2,8 @@ import Image from 'next/image';
 
 import pigeons from '/public/images/pigeons.svg';
 
-import { Button } from '~/shared/ui/Button';
+import Link from 'next/link';
+
 import { HeadLine } from '~/shared/ui/HeadLine';
 import { Logomark } from '~/shared/ui/Logomark';
 import { Logotype } from '~/shared/ui/Logotype';
@@ -39,7 +40,12 @@ export function HeroSection() {
 
           <div className="col-span-full col-start-1 row-start-6 w-64 place-self-center text-center lg:col-span-1 lg:col-start-5 lg:row-start-1">
             <HeadLine className="mb-6" />
-            <Button variant={'secondary'}>знайти фахівця</Button>
+            <Link
+              href="/specialists"
+              className="rounded-md bg-background px-6 py-2 text-sm font-semibold text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              знайти фахівця
+            </Link>
           </div>
         </div>
       </section>
