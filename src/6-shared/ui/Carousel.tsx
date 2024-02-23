@@ -209,7 +209,7 @@ export const CarouselPrevious = React.forwardRef<
       className={cn(
         'absolute',
         orientation === 'horizontal'
-          ? '-left-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-1/3 lg:group-[.upward]:top-3/4'
+          ? '-left-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-1/3 lg:group-[.upward]:top-2/3'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}
@@ -238,7 +238,7 @@ export const CarouselNext = React.forwardRef<
       className={cn(
         'absolute',
         orientation === 'horizontal'
-          ? '-right-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-3/4 lg:group-[.upward]:top-1/3'
+          ? '-right-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-2/3 lg:group-[.upward]:top-1/3'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}
