@@ -4,6 +4,7 @@ export function useGetQuestionsControllerExecuteSuspense() {
       primary: 'Критерії пошуку',
       secondary: 'Багато питань?',
     },
+    href: '/#questions',
     items: [
       {
         title: 'Хто є хто?',
