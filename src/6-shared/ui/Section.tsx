@@ -5,7 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { cn } from '../lib';
 
-import { SectionHeader, type SectionHeadings } from './SectionHeader';
+import { SectionHeader } from './SectionHeader';
 import { Skeleton } from './Skeleton';
 
 const sectionVariants = cva(
@@ -28,21 +28,39 @@ const sectionVariants = cva(
   },
 );
 
+export type Headings = {
+  primary: string;
+  secondary: string;
+};
+
+export type ParentLink = {
+  headings: Headings;
+  href: string;
+};
+
 type Props = React.HTMLAttributes<HTMLElement> &
   VariantProps<typeof sectionVariants> & {
-    headings: SectionHeadings;
+    headings: Headings;
     href?: string;
+    parentLink?: ParentLink;
+    background?: string;
+    type?: 'main' | 'additional';
   };
 
 export function Section({
-  className,
-  variant,
-  height,
   headings,
   href,
+  parentLink,
+  variant,
+  background,
+  height,
+  type,
+  className,
   children,
   ...props
 }: Props) {
+  const headerSide = variant === 'dark' ? 'left' : 'right';
+
   // TODO Add fallback to ErrorBoundary
 
   return (
@@ -56,10 +74,10 @@ export function Section({
         >
           {href ? (
             <Link href={href}>
-              <SectionHeader variant={variant} headings={headings} />
+              <SectionHeader side={headerSide} headings={headings} />
             </Link>
           ) : (
-            <SectionHeader variant={variant} headings={headings} />
+            <SectionHeader side={headerSide} headings={headings} />
           )}
           <div className="flex flex-col justify-center">{children}</div>
         </section>
