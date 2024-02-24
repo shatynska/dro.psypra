@@ -31,7 +31,7 @@ export function SpecialtiesSection() {
   }, [api]);
 
   return (
-    <Section variant="dark" height="fixed" headings={headings} href={href}>
+    <Section headings={headings} href={href} background="dark" height="fixed">
       <CarouselWrapper
         variant={items.length > 3 ? 'upward' : 'default'}
         setApi={setApi}

@@ -1,7 +1,9 @@
 import {
+  DimensionItem,
   useGetAgesControllerExecuteSuspense,
   useGetApproachesControllerExecuteSuspense,
   useGetFormsControllerExecuteSuspense,
+  useGetQuestionsControllerExecuteSuspense,
   useGetSpecialtiesControllerExecuteSuspense,
   useGetTermsControllerExecuteSuspense,
   useGetThemesControllerExecuteSuspense,
@@ -15,22 +17,24 @@ export type DimensionAlias =
   | 'terms'
   | 'themes';
 
-export type DimensionHeadings = {
+export type Headings = {
   primary: string;
   secondary: string;
 };
 
-export type DimensionItem = {
-  alias: string;
-  title: string;
-  content?: string;
-  image?: string;
+export type ParentLink = {
+  headings: Headings;
+  href: string;
 };
 
 export type Dimension = {
-  headings: DimensionHeadings;
+  headings: Headings;
   href?: string;
   items: DimensionItem[];
+};
+
+export type DimensionWithParentLink = Dimension & {
+  parentLink: ParentLink;
 };
 
 export function useGetDimensionControllerExecuteSuspense(
@@ -44,6 +48,10 @@ export function useGetDimensionControllerExecuteSuspense(
     ['terms', useGetTermsControllerExecuteSuspense()],
     ['themes', useGetThemesControllerExecuteSuspense()],
   ]);
+  const dimension = dimensions.get(alias);
 
-  return dimensions.get(alias) as Dimension;
+  const { headings, href } = useGetQuestionsControllerExecuteSuspense();
+  const parentLink = { parentLink: { headings: headings, href: href } };
+
+  return { ...dimension, ...parentLink } as DimensionWithParentLink;
 }

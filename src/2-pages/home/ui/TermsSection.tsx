@@ -4,5 +4,5 @@ import { Section } from '~/shared/ui/Section';
 export function TermsSection() {
   const { headings, href, items } = useGetTermsControllerExecuteSuspense();
 
-  return <Section variant="dark" headings={headings} href={href}></Section>;
+  return <Section headings={headings} href={href} background="dark"></Section>;
 }

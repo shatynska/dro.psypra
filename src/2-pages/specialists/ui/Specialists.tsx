@@ -1,9 +1,17 @@
-import { Specialists as SpecialistsWidget } from '~/widgets/specialists';
+import { useGetSpecialistsControllerExecuteSuspense } from '~/shared/api';
+import { Section } from '~/shared/ui/Section';
 
 export function Specialists() {
+  const { headings, parentLink, items } =
+    useGetSpecialistsControllerExecuteSuspense();
+
   return (
     <div>
-      <SpecialistsWidget />
+      <Section
+        headings={headings}
+        parentLink={parentLink}
+        type="main"
+      ></Section>
     </div>
   );
 }

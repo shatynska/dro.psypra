@@ -13,7 +13,7 @@ import {
 export function Programs() {
   return (
     <div>
-      <Section variant={'light'} headings={programsHeadings}>
+      <Section headings={programsHeadings} type="main">
         <Article>
           <h2>Програма роботи з родинами які втратили рідних на війні</h2>
 

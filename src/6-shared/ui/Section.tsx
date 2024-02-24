@@ -3,16 +3,17 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
+import { Headings, ParentLink } from '../api';
 import { cn } from '../lib';
 
 import { SectionHeader } from './SectionHeader';
 import { Skeleton } from './Skeleton';
 
 const sectionVariants = cva(
-  'relative h-full grid-cols-1 py-12 lg:py-24 grid grid-rows-[6rem_minmax(22rem,auto)] lg:grid-rows-[8rem_minmax(20rem,auto)]',
+  'relative h-full grid-cols-1 py-12 lg:py-24 grid grid-rows-[minmax(6rem,auto)_minmax(22rem,auto)]',
   {
     variants: {
-      variant: {
+      background: {
         light: 'text-foreground',
         dark: 'text-background ',
       },
@@ -22,28 +23,17 @@ const sectionVariants = cva(
       },
     },
     defaultVariants: {
-      variant: 'light',
+      background: 'light',
       height: 'default',
     },
   },
 );
-
-export type Headings = {
-  primary: string;
-  secondary: string;
-};
-
-export type ParentLink = {
-  headings: Headings;
-  href: string;
-};
 
 type Props = React.HTMLAttributes<HTMLElement> &
   VariantProps<typeof sectionVariants> & {
     headings: Headings;
     href?: string;
     parentLink?: ParentLink;
-    background?: string;
     type?: 'main' | 'additional';
   };
 
@@ -51,7 +41,6 @@ export function Section({
   headings,
   href,
   parentLink,
-  variant,
   background,
   height,
   type,
@@ -59,7 +48,7 @@ export function Section({
   children,
   ...props
 }: Props) {
-  const headerSide = variant === 'dark' ? 'left' : 'right';
+  const headerSide = background === 'dark' ? 'left' : 'right';
 
   // TODO Add fallback to ErrorBoundary
 
@@ -69,16 +58,30 @@ export function Section({
         fallback={<Skeleton className="mx-36 mb-16 mt-36 flex min-h-16" />}
       >
         <section
-          className={cn(sectionVariants({ variant, className }))}
+          className={cn(sectionVariants({ background, className }))}
           {...props}
         >
-          {href ? (
+          {type === 'main' ? (
+            <div>
+              {parentLink && (
+                <Link href={parentLink.href}>
+                  <SectionHeader
+                    headings={parentLink.headings}
+                    level="subTitle"
+                    side="right"
+                  />
+                </Link>
+              )}
+              <SectionHeader headings={headings} level="pageTitle" />
+            </div>
+          ) : href ? (
             <Link href={href}>
-              <SectionHeader side={headerSide} headings={headings} />
+              <SectionHeader headings={headings} side={headerSide} />
             </Link>
           ) : (
-            <SectionHeader side={headerSide} headings={headings} />
+            <SectionHeader headings={headings} side={headerSide} />
           )}
+
           <div className="flex flex-col justify-center">{children}</div>
         </section>
       </Suspense>

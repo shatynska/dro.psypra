@@ -18,13 +18,13 @@ type Props = {
 };
 
 export function Dimension({ alias }: Props) {
-  const { headings, href, items } =
+  const { headings, href, parentLink, items } =
     useGetDimensionControllerExecuteSuspense(alias);
 
   return (
     <>
       <div>
-        <Section headings={headings}>
+        <Section headings={headings} parentLink={parentLink} type="main">
           {items.map((item) => (
             <Link key={item.alias} href={`${href}/${item.alias}`}>
               <Article title={item.headings.primary}>

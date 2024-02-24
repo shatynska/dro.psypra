@@ -4,5 +4,5 @@ import { Section } from '~/shared/ui/Section';
 export function FormsSection() {
   const { headings, href, items } = useGetFormsControllerExecuteSuspense();
 
-  return <Section variant="dark" headings={headings} href={href}></Section>;
+  return <Section headings={headings} href={href} background="dark"></Section>;
 }

@@ -1,76 +1,124 @@
+import {
+  Headings,
+  ParentLink,
+  Specialist,
+  useGetQuestionsControllerExecuteSuspense,
+} from './';
+
+export type Specialists = {
+  headings: Headings;
+  href: string;
+  items: Specialist[];
+};
+
+export type SpecialistsWithParentLink = Specialists & {
+  parentLink: ParentLink;
+};
+
 export function useGetSpecialistsControllerExecuteSuspense() {
-  return {
-    headings: {
-      primary: 'Фахівці',
-      secondary: 'До кого звернутися?',
-    },
-    href: '/specialists',
-    items: [
-      {
-        alias: 'berchuk',
+  const { headings, href } = useGetQuestionsControllerExecuteSuspense();
+  const parentLink = { parentLink: { headings: headings, href: href } };
+
+  return { ...specialists, ...parentLink } as SpecialistsWithParentLink;
+}
+
+const specialists = {
+  headings: {
+    primary: 'Фахівці',
+    secondary: 'До кого звернутися?',
+  },
+  href: '/specialists',
+  items: [
+    {
+      alias: 'berchuk',
+      data: {
         title: 'Берчук Володимир',
         specialties: ['психолог', 'психотерапевт'],
       },
-      {
-        alias: 'bilas',
+    },
+    {
+      alias: 'bilas',
+      data: {
         title: 'Білас Юлія',
         specialties: ['психолог'],
       },
-      {
-        alias: 'hambarova',
+    },
+    {
+      alias: 'hambarova',
+      data: {
         title: 'Гамбарова Еляна',
         specialties: ['психолог'],
       },
-      {
-        alias: 'drobchak',
+    },
+    {
+      alias: 'drobchak',
+      data: {
         title: 'Дробчак Ольга',
         specialties: ['психолог', 'психотерапевт'],
       },
-      {
-        alias: 'kotsiuba',
+    },
+    {
+      alias: 'kotsiuba',
+      data: {
         title: 'Коцюба Галина',
         specialties: ['психолог'],
       },
-      {
-        alias: 'lekh',
+    },
+    {
+      alias: 'lekh',
+      data: {
         title: 'Лех Наталя',
         specialties: ['психіатр, психотерапевт'],
       },
-      {
-        alias: 'nekrasova',
+    },
+    {
+      alias: 'nekrasova',
+      data: {
         title: 'Некрасова Валентина',
         specialties: ['психолог', 'психотерапевт'],
       },
-      {
-        alias: 'parashchak',
+    },
+    {
+      alias: 'parashchak',
+      data: {
         title: 'Паращак Надія',
         specialties: ['психіарт'],
       },
-      {
-        alias: 'petryshyn',
+    },
+    {
+      alias: 'petryshyn',
+      data: {
         title: 'Петришин Ольга',
         specialties: ['психотерапевт'],
       },
-      {
-        alias: 'sozanska',
+    },
+    {
+      alias: 'sozanska',
+      data: {
         title: 'Созанська Ірина',
         specialties: ['психотерапевт'],
       },
-      {
-        alias: 'franchuk',
+    },
+    {
+      alias: 'franchuk',
+      data: {
         title: 'Франчук Тетяна',
         specialties: ['психіатр', 'невропатолог'],
       },
-      {
-        alias: 'chaplia',
+    },
+    {
+      alias: 'chaplia',
+      data: {
         title: 'Чапля Уляна',
         specialties: ['психолог'],
       },
-      {
-        alias: 'shatynska',
+    },
+    {
+      alias: 'shatynska',
+      data: {
         title: 'Шатинська Олена',
         specialties: ['психолог', 'психотерапевт'],
       },
-    ],
-  };
-}
+    },
+  ],
+};

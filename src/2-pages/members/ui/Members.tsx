@@ -5,7 +5,7 @@ import { Section } from '~/shared/ui/Section';
 export function Members() {
   return (
     <div>
-      <Section variant={'light'} headings={membersHeadings}>
+      <Section headings={membersHeadings} type="main">
         <Article>
           <p>
             Наша організація може надавати: першу психологічну допомогу;

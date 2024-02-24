@@ -6,11 +6,16 @@ type Props = {
 };
 
 export function Specialist({ alias }: Props) {
-  const { headings } = useGetSpecialistControllerExecuteSuspense(alias);
+  const { headings, parentLink } =
+    useGetSpecialistControllerExecuteSuspense(alias);
 
   return (
     <div>
-      <Section headings={headings}></Section>
+      <Section
+        headings={headings}
+        parentLink={parentLink}
+        type="main"
+      ></Section>
     </div>
   );
 }

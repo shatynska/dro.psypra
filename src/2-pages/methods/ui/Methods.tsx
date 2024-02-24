@@ -5,7 +5,7 @@ import { Section } from '~/shared/ui/Section';
 export function Methods() {
   return (
     <div>
-      <Section variant={'light'} headings={methodsHeadings}>
+      <Section headings={methodsHeadings} type="main">
         <Article>
           <h2>
             Психотерапевтичні методи, якими володіють члени нашої організації

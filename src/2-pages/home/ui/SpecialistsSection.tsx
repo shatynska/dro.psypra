@@ -5,5 +5,5 @@ export function SpecialistsSection() {
   const { headings, href, items } =
     useGetSpecialistsControllerExecuteSuspense();
 
-  return <Section height="fixed" headings={headings} href={href}></Section>;
+  return <Section headings={headings} href={href} height="fixed"></Section>;
 }
