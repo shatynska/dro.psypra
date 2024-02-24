@@ -1,5 +1,7 @@
 'use client';
 
+import parse from 'html-react-parser';
+import DOMPurify from 'isomorphic-dompurify';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -38,7 +40,7 @@ export function SpecialtiesSection() {
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <Link href={`${href}/${specialty.alias}`}>
               <Card
-                key={specialty.title}
+                key={specialty.alias}
                 className={cn(
                   selectedIndex >= index
                     ? 'lg:mt-20'
@@ -48,10 +50,11 @@ export function SpecialtiesSection() {
                 )}
               >
                 <CardHeader>
-                  <CardTitle>{specialty.title}</CardTitle>
+                  <CardTitle>{specialty.headings.primary}</CardTitle>
                 </CardHeader>
                 <CardContent className="line-clamp-10 text-justify md:hyphens-none md:text-left lg:line-clamp-7">
-                  {specialty.content}
+                  {specialty.content &&
+                    parse(DOMPurify.sanitize(specialty.content))}
                 </CardContent>
               </Card>
             </Link>
