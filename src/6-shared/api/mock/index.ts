@@ -5,6 +5,7 @@ export * from './useGetApproachesControllerExecute.mock';
 export * from './useGetContactsControllerExecute.mock';
 export * from './useGetCostsControllerExecute.mock';
 export * from './useGetDimensionControllerExecute.mock';
+export * from './useGetDimensionItemControllerExecute.mock';
 export * from './useGetFormsControllerExecute.mock';
 export * from './useGetLocationsControllerExecute.mock';
 export * from './useGetPostsControllerExecute.mock';
