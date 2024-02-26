@@ -9,7 +9,7 @@ const logoVariants = cva('flex items-center', {
   variants: {
     variant: {
       default: '',
-      header: 'text-xs leading-tight gap-2',
+      header: 'gap-2 text-xs font-light leading-tight tracking-wide',
     },
   },
   defaultVariants: {
