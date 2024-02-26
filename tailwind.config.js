@@ -60,6 +60,7 @@ module.exports = {
         },
       },
       spacing: {
+        18: '4.5rem',
         112: '28rem',
         128: '32rem',
         144: '36rem',
@@ -75,9 +76,9 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       lineClamp: {
-        7: '7',
         8: '8',
         10: '10',
+        12: '12',
       },
     },
   },
