@@ -38,21 +38,25 @@ export function SpecialtiesSection() {
       >
         {items.map((specialty, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <Link href={`${href}/${specialty.alias}`}>
+            <Link
+              href={`${href}/${specialty.alias}`}
+              className="flex justify-center"
+            >
               <Card
                 key={specialty.alias}
                 className={cn(
+                  'md:max-w-[20rem]',
                   selectedIndex >= index
-                    ? 'lg:mt-20'
+                    ? 'md:mt-8 lg:mt-16'
                     : selectedIndex === index - 1
-                      ? 'lg:mt-10'
-                      : 'lg:mt-0',
+                      ? 'md:mt-0 lg:mt-8'
+                      : 'md:mt-0 lg:mt-0',
                 )}
               >
                 <CardHeader>
                   <CardTitle>{specialty.headings.primary}</CardTitle>
                 </CardHeader>
-                <CardContent className="line-clamp-10 text-justify md:hyphens-none md:text-left lg:line-clamp-7">
+                <CardContent className="line-clamp-12 text-justify md:hyphens-none md:text-left lg:line-clamp-10">
                   {specialty.content &&
                     parse(DOMPurify.sanitize(specialty.content))}
                 </CardContent>
