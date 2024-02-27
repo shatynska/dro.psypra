@@ -24,7 +24,7 @@ export function Home() {
         <SpecialtiesSection />
         <SpecialistsSection />
       </SectionGroup>
-      <SectionGroup variant="red">
+      <SectionGroup>
         <FormsSection />
         <ThemesSection />
       </SectionGroup>
@@ -32,7 +32,7 @@ export function Home() {
         <TermsSection />
         <ApproachesSection />
       </SectionGroup>
-      <SectionGroup variant="red">
+      <SectionGroup>
         <CostsSection />
         <LocationsSection />
       </SectionGroup>
