@@ -163,7 +163,7 @@ export const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           'flex',
-          orientation === 'horizontal' ? '-ml-16' : '-mt-4 flex-col',
+          orientation === 'horizontal' ? '-ml-8' : '-mt-4 flex-col',
           className,
         )}
         {...props}
@@ -186,7 +186,7 @@ export const CarouselItem = React.forwardRef<
       aria-roledescription="slide"
       className={cn(
         'min-w-0 shrink-0 grow-0 basis-full',
-        orientation === 'horizontal' ? 'pl-16' : 'pt-4',
+        orientation === 'horizontal' ? 'pl-8' : 'pt-4',
         className,
       )}
       {...props}
@@ -209,7 +209,7 @@ export const CarouselPrevious = React.forwardRef<
       className={cn(
         'absolute',
         orientation === 'horizontal'
-          ? '-left-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-1/3 lg:group-[.upward]:top-2/3'
+          ? '-left-12 top-1/2 -translate-y-1/2 md:top-2/3 md:group-[.downward]:top-1/3'
           : '-top-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}
@@ -238,7 +238,7 @@ export const CarouselNext = React.forwardRef<
       className={cn(
         'absolute',
         orientation === 'horizontal'
-          ? '-right-12 top-1/2 -translate-y-1/2 lg:group-[.downward]:top-2/3 lg:group-[.upward]:top-1/3'
+          ? '-right-12 top-1/2 -translate-y-1/2 md:top-1/3 md:group-[.downward]:top-2/3'
           : '-bottom-12 left-1/2 -translate-x-1/2 rotate-90',
         className,
       )}

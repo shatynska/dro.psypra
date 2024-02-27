@@ -7,11 +7,11 @@ const sectionHeaderVariants = cva('*:w-full h-full font-semibold', {
   variants: {
     level: {
       pageTitle:
-        'h-24 text-lg font-bold lg:h-32 lg:text-2xl [&_h1]:mt-1 [&_h1]:text-3xl lg:[&_h1]:mt-2 [&_h1]:lg:text-5xl',
+        'h-24 text-md font-bold md:h-32 md:text-2xl [&_h1]:mt-1 [&_h1]:text-3xl md:[&_h1]:mt-2 [&_h1]:md:text-5xl',
       sectionTitle:
-        'text-base lg:text-xl [&_h2]:mt-1 [&_h2]:text-2xl lg:[&_h2]:mt-2 [&_h2]:lg:text-4xl',
+        'h-24 text-base md:text-xl [&_h2]:mt-1 [&_h2]:text-2xl md:[&_h2]:mt-2 [&_h2]:md:text-4xl',
       subTitle:
-        'h-auto text-xl tracking-tight opacity-80 lg:text-2xl [&_[role="doc-subtitle"]]:text-sm',
+        'h-auto text-xl tracking-tight opacity-80 md:text-2xl [&_[role="doc-subtitle"]]:text-sm',
     },
     side: {
       left: '*:pr-0',
@@ -23,7 +23,7 @@ const sectionHeaderVariants = cva('*:w-full h-full font-semibold', {
       level: 'sectionTitle',
       side: 'right',
       class:
-        '*:text-start lg:*:text-end [&_[role="doc-subtitle"]]:px-6 [&_h2]:pr-0',
+        '*:text-start md:*:text-end [&_[role="doc-subtitle"]]:px-6 [&_h2]:pr-0',
     },
   ],
   defaultVariants: {
@@ -50,7 +50,7 @@ export function SectionHeader({
       className={cn(sectionHeaderVariants({ level, side, className }))}
       {...props}
     >
-      <p role="doc-subtitle" className="px-6 opacity-70 lg:px-12 lg:text-xl">
+      <p role="doc-subtitle" className="px-6 opacity-70 md:px-12 md:text-xl">
         {headings.secondary}
       </p>
       {level === 'pageTitle' ? (

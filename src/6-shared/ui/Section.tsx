@@ -10,7 +10,7 @@ import { SectionHeader } from './SectionHeader';
 import { Skeleton } from './Skeleton';
 
 const sectionVariants = cva(
-  'relative h-full grid-cols-1 py-12 lg:py-24 grid grid-rows-[minmax(6rem,auto)_minmax(22rem,auto)]',
+  'relative h-full grid-cols-1 grid grid-rows-[auto_minmax(22rem,auto)]',
   {
     variants: {
       background: {
@@ -18,13 +18,18 @@ const sectionVariants = cva(
         dark: 'text-background ',
       },
       height: {
-        fixed: '[&>div]:align-center',
+        fixed: '[&>div]:items-center',
         default: '',
+      },
+      type: {
+        main: 'pt-8 pb-12 md:pb-24',
+        additional: 'py-12 md:py-24',
       },
     },
     defaultVariants: {
       background: 'light',
       height: 'default',
+      type: 'additional',
     },
   },
 );
@@ -34,7 +39,6 @@ type Props = React.HTMLAttributes<HTMLElement> &
     headings: Headings;
     href?: string;
     parentLink?: ParentLink;
-    type?: 'main' | 'additional';
   };
 
 export function Section({
@@ -58,7 +62,9 @@ export function Section({
         fallback={<Skeleton className="mx-36 mb-16 mt-36 flex min-h-16" />}
       >
         <section
-          className={cn(sectionVariants({ background, className }))}
+          className={cn(
+            sectionVariants({ background, height, type, className }),
+          )}
           {...props}
         >
           {type === 'main' ? (
