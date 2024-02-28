@@ -45,18 +45,18 @@ export function SpecialtiesSection() {
               <Card
                 key={specialty.alias}
                 className={cn(
-                  'md:max-w-[20rem]',
+                  'md:mb-16 md:max-w-80 md:transition md:duration-700 md:ease-in-out',
                   selectedIndex >= index
-                    ? 'md:mt-8 lg:mt-16'
+                    ? 'md:translate-y-16'
                     : selectedIndex === index - 1
-                      ? 'md:mt-0 lg:mt-8'
-                      : 'md:mt-0 lg:mt-0',
+                      ? 'md:translate-y-0 lg:translate-y-8'
+                      : 'md:translate-y-0',
                 )}
               >
                 <CardHeader>
                   <CardTitle>{specialty.headings.primary}</CardTitle>
                 </CardHeader>
-                <CardContent className="line-clamp-12 text-justify md:hyphens-none md:text-left lg:line-clamp-10">
+                <CardContent className="line-clamp-12 text-justify md:line-clamp-10 md:hyphens-none md:text-left">
                   {specialty.content &&
                     parse(DOMPurify.sanitize(specialty.content))}
                 </CardContent>
