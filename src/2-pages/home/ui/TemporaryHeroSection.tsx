@@ -14,7 +14,7 @@ export function TemporaryHeroSection() {
       <div className="absolute top-[25.25rem] h-64 w-full bg-gradient-to-t from-red-gradient-dark to-red-gradient-light sm:top-128 lg:hidden" />
 
       <section className="relative text-background lg:h-[44rem]">
-        <div className="lg:pt-18 grid grid-cols-[1fr_9.5rem_4.75rem_1rem_1fr] grid-rows-[6rem_7.75rem_2.75rem_2.75rem_5rem_16rem] content-center justify-center pt-4 sm:grid-cols-[1fr_14.25rem_7.25rem_1.75rem_1fr] sm:grid-rows-[6rem_11.75rem_4.25rem_4rem_5rem_16rem] lg:h-screen lg:max-h-192 lg:min-h-160 lg:grid-cols-[0_14.25rem_7.25rem__minmax(8rem,24rem)_16rem] lg:grid-rows-[8rem_11.75rem_4.25rem]">
+        <div className="grid grid-cols-[1fr_9.5rem_4.75rem_1rem_1fr] grid-rows-[6rem_7.75rem_2.75rem_2.75rem_5rem_16rem] content-center justify-center pt-4 sm:grid-cols-[1fr_14.25rem_7.25rem_1.75rem_1fr] sm:grid-rows-[6rem_11.75rem_4.25rem_4rem_5rem_16rem] lg:h-screen lg:max-h-192 lg:min-h-160 lg:grid-cols-[0_14.25rem_7.25rem__minmax(8rem,24rem)_16rem] lg:grid-rows-[8rem_11.75rem_4.25rem] lg:pt-18">
           <div className="absolute left-0 h-28 w-28 lg:relative lg:col-span-2 lg:col-start-3 lg:row-start-1 lg:h-32 lg:w-48">
             <Image
               src={pigeons}
