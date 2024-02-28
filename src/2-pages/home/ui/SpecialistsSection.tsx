@@ -3,7 +3,10 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-import { useGetSpecialistsControllerExecuteSuspense } from '~/shared/api';
+import {
+  Specialist,
+  useGetSpecialistsControllerExecuteSuspense,
+} from '~/shared/api';
 import { cn } from '~/shared/lib';
 import {
   Card,
@@ -21,9 +24,16 @@ export function SpecialistsSection() {
   const { headings, href, items } =
     useGetSpecialistsControllerExecuteSuspense();
 
+  const [specialists, setSpecialists] = useState<Specialist[]>([]);
+
   const [api, setApi] = useState<CarouselApi>();
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    setSpecialists(items);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (!api) {
@@ -41,7 +51,7 @@ export function SpecialistsSection() {
         variant={items.length > 3 ? 'downward' : 'default'}
         setApi={setApi}
       >
-        {items.map((specialist, index) => (
+        {specialists.map((specialist, index) => (
           <CarouselItem
             key={index}
             className="sm:basis-1/2 lg:basis-1/3 xl:basis-1/4"
@@ -53,14 +63,14 @@ export function SpecialistsSection() {
               <Card
                 key={specialist.alias}
                 className={cn(
-                  'max-w-80 overflow-hidden md:transition md:duration-700 md:ease-in-out',
+                  'max-w-80 overflow-hidden md:mb-16 md:transition md:duration-700 md:ease-in-out',
                   selectedIndex >= index
                     ? 'md:translate-y-0'
                     : selectedIndex === index - 1
                       ? 'md:translate-y-16 lg:translate-y-8 xl:translate-y-5'
                       : selectedIndex === index - 2
                         ? 'md:translate-y-16 xl:translate-y-10'
-                        : 'md:mb-16 md:translate-y-16 xl:translate-y-[3.75rem]',
+                        : ' md:translate-y-16 xl:translate-y-[3.75rem]',
                 )}
               >
                 <CardContent>

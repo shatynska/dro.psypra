@@ -19,7 +19,22 @@ export function useGetSpecialistsControllerExecuteSuspense() {
   const { headings, href } = useGetQuestionsControllerExecuteSuspense();
   const parentLink = { parentLink: { headings: headings, href: href } };
 
-  return { ...specialists, ...parentLink } as SpecialistsWithParentLink;
+  const shuffledSpecialistsItems = shuffleArray(specialists.items);
+  specialists.items = shuffledSpecialistsItems;
+
+  return {
+    ...specialists,
+    ...parentLink,
+  } as SpecialistsWithParentLink;
+}
+
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
 
 const specialists = {
