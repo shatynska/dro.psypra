@@ -51,14 +51,14 @@ export function SectionHeader({
       {...props}
     >
       <p role="doc-subtitle" className="px-6 opacity-70 md:px-12 md:text-xl">
-        {headings.secondary}
+        {headings?.secondary}
       </p>
       {level === 'pageTitle' ? (
-        <h1 className="tracking-tight">{headings.primary}</h1>
+        <h1 className="tracking-tight">{headings?.primary}</h1>
       ) : level === 'sectionTitle' ? (
-        <h2 className="tracking-tight">{headings.primary}</h2>
+        <h2 className="tracking-tight">{headings?.primary}</h2>
       ) : (
-        <p className="tracking-tight">{headings.primary}</p>
+        <p className="tracking-tight">{headings?.primary}</p>
       )}
     </header>
   );

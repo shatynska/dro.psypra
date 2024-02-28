@@ -25,13 +25,14 @@ export function Dimension({ alias }: Props) {
     <>
       <div>
         <Section headings={headings} parentLink={parentLink} type="main">
-          {items.map((item) => (
-            <Link key={item.alias} href={`${href}/${item.alias}`}>
-              <Article title={item.headings.primary}>
-                {item.content && parse(DOMPurify.sanitize(item.content))}
-              </Article>
-            </Link>
-          ))}
+          {items &&
+            items.map((item) => (
+              <Link key={item.alias} href={`${href}/${item.alias}`}>
+                <Article title={item.headings.primary}>
+                  {item.content && parse(DOMPurify.sanitize(item.content))}
+                </Article>
+              </Link>
+            ))}
         </Section>
       </div>
       <SectionGroup>
