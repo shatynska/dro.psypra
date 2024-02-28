@@ -2,9 +2,6 @@ import { Manrope } from 'next/font/google';
 
 import { cn } from '~/shared/lib';
 
-import { Header } from '~/widgets/header';
-import { Sidebar } from '~/widgets/sidebar';
-
 import './globals.css';
 
 const manrope = Manrope({ subsets: ['latin', 'cyrillic'] });
@@ -23,7 +20,7 @@ export function TemporaryRootLayout({ children }: Props) {
         )}
       >
         <div className="mx-auto flex max-w-384 flex-col">
-          <main className="relative flex flex-col lg:pt-16">{children}</main>
+          <main className="relative flex flex-col">{children}</main>
         </div>
       </body>
     </html>
