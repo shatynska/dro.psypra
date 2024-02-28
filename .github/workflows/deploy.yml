@@ -1,7 +1,7 @@
 name: Deploy
 
 env:
-  ENVIROMENT: blue
+  ENVIROMENT: green
 
 on:
   push:

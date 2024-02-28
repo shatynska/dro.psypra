@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { TemporaryRootLayout } from '~/app/TemporaryRootLayout';
+import { RootLayout } from '~/app/RootLayout';
 
 export const metadata: Metadata = {
   title: 'Психологи, психотерапевти та психіатри Дрогобиччини',
@@ -12,5 +12,5 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <TemporaryRootLayout>{children}</TemporaryRootLayout>;
+  return <RootLayout>{children}</RootLayout>;
 }
