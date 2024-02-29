@@ -3,11 +3,11 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import { Headings, ParentLink } from '../api';
-import { cn } from '../lib';
+import { Headings, ParentLink } from '../../api';
+import { cn } from '../../lib';
+import { Skeleton } from '../Skeleton';
 
 import { SectionHeader } from './SectionHeader';
-import { Skeleton } from './Skeleton';
 
 const sectionVariants = cva(
   'relative h-full grid-cols-1 grid grid-rows-[auto_minmax(22rem,auto)]',

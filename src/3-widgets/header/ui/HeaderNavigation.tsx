@@ -1,7 +1,7 @@
 'use client';
 
 import { dimensionsLinks, goLinks, specialistsLinks } from '~/shared/api/mock';
-import { Logomark } from '~/shared/ui/Logomark';
+import { Logomark } from '~/shared/ui/Logo';
 import {
   NavigationMenu,
   NavigationMenuContent,

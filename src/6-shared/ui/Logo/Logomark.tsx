@@ -4,7 +4,7 @@ import logomarkLg from '/public/images/logomark-lg.svg';
 import logomarkSm from '/public/images/logomark-sm.svg';
 import logomarkXs from '/public/images/logomark-xs.svg';
 
-import { cn } from '../lib';
+import { cn } from '../../lib';
 
 type Props = React.HTMLAttributes<HTMLImageElement> & {
   variant?: 'default' | 'header' | 'hero';

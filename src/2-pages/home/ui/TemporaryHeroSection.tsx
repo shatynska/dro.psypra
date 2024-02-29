@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import pigeons from '/public/images/pigeons.svg';
 
-import { Logotype } from '~/shared/ui/Logotype';
+import { Logotype } from '~/shared/ui/Logo';
 
 export function TemporaryHeroSection() {
   return (

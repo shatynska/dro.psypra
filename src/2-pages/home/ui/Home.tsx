@@ -1,4 +1,4 @@
-import { SectionGroup } from '~/shared/ui/SectionGroup';
+import { SectionGroup } from '~/shared/ui/Section';
 
 import { ApproachesSection } from './ApproachesSection';
 import { ContactsSection } from './ContactsSection';

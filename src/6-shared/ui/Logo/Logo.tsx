@@ -1,9 +1,8 @@
 import { cva, VariantProps } from 'class-variance-authority';
 
-import { cn } from '../lib';
+import { cn } from '../../lib';
 
-import { Logomark } from './Logomark';
-import { Logotype } from './Logotype';
+import { Logomark, Logotype } from './';
 
 const logoVariants = cva('flex items-center', {
   variants: {

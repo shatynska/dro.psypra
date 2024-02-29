@@ -15,8 +15,11 @@ import {
   CardSubTitle,
   CardTitle,
 } from '~/shared/ui/Card';
-import { CarouselApi, CarouselItem } from '~/shared/ui/Carousel';
-import { CarouselWrapper } from '~/shared/ui/CarouselWrapper';
+import {
+  CarouselApi,
+  CarouselItem,
+  CarouselWrapper,
+} from '~/shared/ui/Carousel';
 import ImageWithFallback from '~/shared/ui/ImageWithFallback';
 import { Section } from '~/shared/ui/Section';
 

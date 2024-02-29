@@ -8,8 +8,11 @@ import { useEffect, useState } from 'react';
 import { useGetSpecialtiesControllerExecuteSuspense } from '~/shared/api';
 import { cn } from '~/shared/lib';
 import { Card, CardContent, CardHeader, CardTitle } from '~/shared/ui/Card';
-import { CarouselApi, CarouselItem } from '~/shared/ui/Carousel';
-import { CarouselWrapper } from '~/shared/ui/CarouselWrapper';
+import {
+  CarouselApi,
+  CarouselItem,
+  CarouselWrapper,
+} from '~/shared/ui/Carousel';
 import { Section } from '~/shared/ui/Section';
 
 export function SpecialtiesSection() {

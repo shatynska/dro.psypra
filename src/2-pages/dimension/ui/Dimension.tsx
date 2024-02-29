@@ -7,8 +7,7 @@ import {
   useGetDimensionControllerExecuteSuspense,
 } from '~/shared/api';
 import { Article } from '~/shared/ui/Article';
-import { Section } from '~/shared/ui/Section';
-import { SectionGroup } from '~/shared/ui/SectionGroup';
+import { Section, SectionGroup } from '~/shared/ui/Section';
 
 import { Posts } from '~/widgets/posts';
 import { Specialists } from '~/widgets/specialists';

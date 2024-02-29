@@ -4,11 +4,11 @@ import Link from 'next/link';
 import pigeons from '/public/images/pigeons.svg';
 
 import { HeadLine } from '~/shared/ui/HeadLine';
-import { Logotype } from '~/shared/ui/Logotype';
+import { Logotype } from '~/shared/ui/Logo';
 
 export function HeroSection() {
   return (
-    <div className="z-30 -mt-[5.5rem] md:-mt-28 lg:z-auto">
+    <div className="z-30 -mt-22 md:-mt-28 lg:z-auto">
       <div className="absolute h-160 w-full bg-gradient-to-b from-blue-gradient-dark from-[6rem] to-blue-gradient-light to-[24rem] bg-[center_top] md:h-[50rem] md:bg-[url('/images/hero-fon.svg')]" />
 
       <section className="relative flex h-160 flex-col items-center gap-20 text-background md:h-[44rem] md:gap-16">

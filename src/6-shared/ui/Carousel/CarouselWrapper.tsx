@@ -1,7 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import { Dispatch, SetStateAction } from 'react';
 
-import { cn } from '../lib';
+import { cn } from '../../lib';
 
 import {
   Carousel,
