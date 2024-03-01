@@ -44,7 +44,7 @@ export function useGetQuestionsControllerExecuteSuspense() {
       },
       {
         title: 'Коли приймають?',
-        href: '/#times',
+        href: '/#schedules',
       },
       {
         title: 'Як зв\u0027язатися?',

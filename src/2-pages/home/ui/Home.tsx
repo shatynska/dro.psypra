@@ -8,11 +8,11 @@ import {
   HeroSection,
   LocationsSection,
   QuestionsSection,
+  SchedulesSection,
   SpecialistsSection,
   SpecialtiesSection,
   TermsSection,
   ThemesSection,
-  TimesSection,
 } from './sections';
 
 export function Home() {
@@ -39,7 +39,7 @@ export function Home() {
         <LocationsSection />
       </SectionGroup>
       <SectionGroup>
-        <TimesSection />
+        <SchedulesSection />
         <ContactsSection />
       </SectionGroup>
     </>

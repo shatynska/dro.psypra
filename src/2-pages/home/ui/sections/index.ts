@@ -11,4 +11,4 @@ export * from './SpecialtiesSection';
 export * from './SpecialtiesSectionCards';
 export * from './TermsSection';
 export * from './ThemesSection';
-export * from './TimesSection';
+export * from './SchedulesSection';
