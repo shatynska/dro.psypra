@@ -1,17 +1,19 @@
 import { SectionGroup } from '~/shared/ui/Section';
 
-import { ApproachesSection } from './ApproachesSection';
-import { ContactsSection } from './ContactsSection';
-import { CostsSection } from './CostsSection';
-import { FormsSection } from './FormsSection';
-import { HeroSection } from './HeroSection';
-import { LocationsSection } from './LocationsSection';
-import { QuestionsSection } from './QuestionsSection';
-import { SpecialistsSection } from './SpecialistsSection';
-import { SpecialtiesSection } from './SpecialtiesSection';
-import { TermsSection } from './TermsSection';
-import { ThemesSection } from './ThemesSection';
-import { TimesSection } from './TimesSection';
+import {
+  ApproachesSection,
+  ContactsSection,
+  CostsSection,
+  FormsSection,
+  HeroSection,
+  LocationsSection,
+  QuestionsSection,
+  SpecialistsSection,
+  SpecialtiesSection,
+  TermsSection,
+  ThemesSection,
+  TimesSection,
+} from './sections';
 
 export function Home() {
   return (
