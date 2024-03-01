@@ -1,5 +1,5 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import { Dispatch, SetStateAction } from 'react';
+import { useState } from 'react';
 
 import { cn } from '../../lib';
 
@@ -25,17 +25,16 @@ const CarouselWrapperVariants = cva('w-full px-12', {
 });
 
 type Props = React.HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof CarouselWrapperVariants> & {
-    setApi: Dispatch<SetStateAction<CarouselApi | undefined>>;
-  };
+  VariantProps<typeof CarouselWrapperVariants>;
 
 export function CarouselWrapper({
   variant,
-  setApi,
   className,
   children,
   ...props
 }: Props) {
+  const [api, setApi] = useState<CarouselApi>();
+
   return (
     <div
       className={cn(CarouselWrapperVariants({ variant, className }))}
