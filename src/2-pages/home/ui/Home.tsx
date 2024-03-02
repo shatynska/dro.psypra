@@ -3,7 +3,7 @@ import { SectionGroup } from '~/shared/ui/Section';
 import {
   ApproachesSection,
   ContactsSection,
-  CostsSection,
+  RatesSection,
   FormsSection,
   HeroSection,
   LocationsSection,
@@ -35,7 +35,7 @@ export function Home() {
         <ApproachesSection />
       </SectionGroup>
       <SectionGroup>
-        <CostsSection />
+        <RatesSection />
         <LocationsSection />
       </SectionGroup>
       <SectionGroup>

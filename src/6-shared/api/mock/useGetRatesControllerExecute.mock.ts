@@ -1,10 +1,10 @@
-export function useGetCostsControllerExecuteSuspense() {
+export function useGetRatesControllerExecuteSuspense() {
   return {
     headings: {
       primary: 'Орієнтовні ціни',
       secondary: 'Скільки коштує?',
     },
-    href: '/#costs',
+    href: '/#rates',
     items: [],
   };
 }

@@ -36,7 +36,7 @@ export function useGetQuestionsControllerExecuteSuspense() {
       },
       {
         title: 'Скільки коштує?',
-        href: '/#costs',
+        href: '/#rates',
       },
       {
         title: 'Де проводиться?',

@@ -1,6 +1,6 @@
 export * from './ApproachesSection';
 export * from './ContactsSection';
-export * from './CostsSection';
+export * from './RatesSection';
 export * from './FormsSection';
 export * from './HeroSection';
 export * from './LocationsSection';
