@@ -4,7 +4,6 @@ import Link from 'next/link';
 import pigeons from '/public/images/pigeons.svg';
 
 import { HeadLine } from '~/shared/ui/HeadLine';
-import { Logotype } from '~/shared/ui/Logo';
 
 export function HeroSection() {
   return (
@@ -16,7 +15,9 @@ export function HeroSection() {
           <div className="absolute left-0 top-4 h-20 w-40 md:relative md:col-span-2 md:col-start-3 md:row-start-1">
             <Image src={pigeons} alt="птахи" fill={true} />
           </div>
-          <Logotype className="col-start-2 row-start-1 self-end text-end text-xl font-light md:mb-7 md:ml-7 md:text-start md:text-[1.75rem] md:leading-9 md:tracking-normal" />
+          <h1 className="col-start-2 row-start-1 w-40 self-end text-end text-xl font-light md:mb-7 md:ml-7 md:text-start md:text-[1.75rem] md:leading-9 md:tracking-normal">
+            психологи психотерапевти психіатри
+          </h1>
           <div className="col-span-2 col-start-1 row-span-2 row-start-1 self-end text-end text-[1.875rem] font-bold uppercase leading-none tracking-tight first-letter:bg-[url('/images/logomark-md.svg')] first-letter:bg-[bottom_left] first-letter:bg-no-repeat first-letter:pl-[6.5rem] first-letter:pr-[0.125rem] first-letter:pt-[7.5rem] first-letter:text-[0rem] md:text-start md:text-[4rem] md:first-letter:bg-[url('/images/logomark-lg.svg')] md:first-letter:pl-[10rem] md:first-letter:pt-[12rem]">
             Дрогобиччини
           </div>
