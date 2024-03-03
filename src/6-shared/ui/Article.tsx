@@ -6,7 +6,7 @@ export function Article({ title, className, children, ...props }: Props) {
   return (
     <article
       className={cn(
-        'mb-12 max-w-192 pl-6 last:mb-0 md:pl-12 [&_h3]:py-2 [&_h3]:text-lg [&_h3]:font-bold [&_p]:mb-4',
+        'mb-12 max-w-192 pl-6 last:mb-0 md:pl-12 [&_h3]:py-2 [&_p]:mb-4',
         className,
       )}
       {...props}

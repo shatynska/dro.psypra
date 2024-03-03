@@ -15,7 +15,7 @@ const sectionVariants = cva(
     variants: {
       background: {
         light: 'text-foreground',
-        dark: 'text-background ',
+        dark: 'text-background [&_h1]:font-semibold [&_h2]:font-semibold',
       },
       height: {
         fixed: '[&>div]:items-center',

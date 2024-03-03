@@ -11,7 +11,11 @@ import { Logomark } from '~/shared/ui/Logo';
 
 export function SidebarNavigation() {
   return (
-    <Accordion type="single" collapsible className="relative top-12">
+    <Accordion
+      type="single"
+      collapsible
+      className="relative top-12 [&_h3]:text-base"
+    >
       <AccordionItem value="item-1">
         <AccordionTopListItem
           key="{specialist.name}"
