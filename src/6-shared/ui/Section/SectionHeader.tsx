@@ -9,7 +9,8 @@ const sectionHeaderVariants = cva('*:w-full h-full', {
       pageTitle:
         'h-24 text-base font-semibold md:h-32 md:text-xl [&_h1]:mt-1 md:[&_h1]:mt-2',
       sectionTitle: 'h-24 text-base md:text-xl [&_h2]:mt-1 md:[&_h2]:mt-2',
-      subTitle: 'h-auto text-xs opacity-80 md:text-sm [&_h4]:font-semibold',
+      subTitle:
+        'h-auto text-xs opacity-70 md:text-sm font-semibold [&_[role="doc-subtitle"]]:hidden sm:[&_[role="doc-subtitle"]]:block',
     },
     side: {
       left: '*:pr-0',
@@ -48,7 +49,7 @@ export function SectionHeader({
       className={cn(sectionHeaderVariants({ level, side, className }))}
       {...props}
     >
-      <p role="doc-subtitle" className="px-6  opacity-70 md:px-12">
+      <p role="doc-subtitle" className="px-6 opacity-80 md:px-12">
         {headings?.secondary}
       </p>
       {level === 'pageTitle' ? (
