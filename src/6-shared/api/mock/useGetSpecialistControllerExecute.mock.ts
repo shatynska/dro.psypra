@@ -17,6 +17,10 @@ export type SpecialistWithParentLink = Specialist & {
   parentLink: ParentLink;
 };
 
+export type SpecialistProps = {
+  alias: string;
+};
+
 export function useGetSpecialistControllerExecuteSuspense(alias: string) {
   const specialists = useGetSpecialistsControllerExecuteSuspense();
 
