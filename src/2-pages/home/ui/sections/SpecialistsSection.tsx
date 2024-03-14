@@ -1,9 +1,9 @@
 import { useGetRandomizedSpecialistsControllerExecuteSuspense } from '~/shared/api';
 import { shuffleArray } from '~/shared/lib';
-import { CarouselWrapper } from '~/shared/ui/Carousel';
+import { CarouselItem, CarouselWrapper } from '~/shared/ui/Carousel';
 import { Section } from '~/shared/ui/Section';
 
-import { SpecialistsSectionCards } from './SpecialistsSectionCards';
+import { SpecialistCard } from '~/entities/specialist';
 
 export function SpecialistsSection() {
   const { headings, href, items } =
@@ -11,8 +11,15 @@ export function SpecialistsSection() {
 
   return (
     <Section headings={headings} href={href}>
-      <CarouselWrapper variant={items.length > 3 ? 'downward' : 'default'}>
-        <SpecialistsSectionCards specialists={shuffleArray(items)} />
+      <CarouselWrapper
+        variant={items.length > 3 ? 'downward' : 'default'}
+        maxSlidesInView={4}
+      >
+        {shuffleArray(items).map((specialist, index) => (
+          <CarouselItem index={index} key={specialist.alias}>
+            <SpecialistCard specialist={specialist} />
+          </CarouselItem>
+        ))}
       </CarouselWrapper>
     </Section>
   );
