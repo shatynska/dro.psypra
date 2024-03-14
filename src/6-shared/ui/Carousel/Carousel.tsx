@@ -18,6 +18,7 @@ type CarouselProps = {
   opts?: CarouselOptions;
   plugins?: CarouselPlugin;
   orientation?: 'horizontal' | 'vertical';
+  maxSlidesInView?: number;
   setApi?: (api: CarouselApi) => void;
 };
 
@@ -29,6 +30,7 @@ type CarouselContextProps = {
   canScrollPrev: boolean;
   canScrollNext: boolean;
   selectedIndex: number;
+  maxSlidesInView: number;
 } & CarouselProps;
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null);
@@ -50,6 +52,7 @@ export const Carousel = React.forwardRef<
   (
     {
       orientation = 'horizontal',
+      maxSlidesInView = 1,
       opts,
       setApi,
       plugins,
@@ -131,6 +134,7 @@ export const Carousel = React.forwardRef<
           opts,
           orientation:
             orientation || (opts?.axis === 'y' ? 'vertical' : 'horizontal'),
+          maxSlidesInView,
           scrollPrev,
           scrollNext,
           canScrollPrev,

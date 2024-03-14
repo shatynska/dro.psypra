@@ -1,5 +1,4 @@
 import { VariantProps, cva } from 'class-variance-authority';
-import { useState } from 'react';
 
 import { cn } from '../../lib';
 
@@ -8,7 +7,6 @@ import {
   CarouselContent,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
 } from './Carousel';
 
 const CarouselWrapperVariants = cva('w-full px-12', {
@@ -25,16 +23,17 @@ const CarouselWrapperVariants = cva('w-full px-12', {
 });
 
 type Props = React.HTMLAttributes<HTMLDivElement> &
-  VariantProps<typeof CarouselWrapperVariants>;
+  VariantProps<typeof CarouselWrapperVariants> & {
+    maxSlidesInView?: number;
+  };
 
 export function CarouselWrapper({
   variant,
+  maxSlidesInView,
   className,
   children,
   ...props
 }: Props) {
-  const [api, setApi] = useState<CarouselApi>();
-
   return (
     <div
       className={cn(CarouselWrapperVariants({ variant, className }))}
@@ -44,8 +43,8 @@ export function CarouselWrapper({
         opts={{
           align: 'start',
         }}
+        maxSlidesInView={maxSlidesInView}
         className="sm:px-4"
-        setApi={setApi}
       >
         <CarouselContent>{children}</CarouselContent>
         <CarouselPrevious />
