@@ -182,9 +182,9 @@ CarouselContent.displayName = 'CarouselContent';
 
 export const CarouselItem = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  const { orientation } = useCarousel();
+  React.HTMLAttributes<HTMLDivElement> & { index?: number }
+>(({ index = 0, className, ...props }, ref) => {
+  const { orientation, selectedIndex, maxSlidesInView } = useCarousel();
 
   return (
     <div
@@ -193,6 +193,28 @@ export const CarouselItem = React.forwardRef<
       aria-roledescription="slide"
       className={cn(
         'min-w-0 shrink-0 grow-0 basis-full',
+        'md:mb-16 md:transition md:duration-700 md:ease-in-out',
+        maxSlidesInView === 3
+          ? 'md:basis-1/2 lg:basis-1/3'
+          : maxSlidesInView === 4
+            ? 'sm:basis-1/2 lg:basis-1/3 xl:basis-1/4'
+            : '',
+        maxSlidesInView === 3 && selectedIndex >= index
+          ? 'md:translate-y-16'
+          : maxSlidesInView === 3 && selectedIndex === index - 1
+            ? 'md:translate-y-0 lg:translate-y-8'
+            : maxSlidesInView === 3
+              ? 'md:translate-y-0'
+              : '',
+        maxSlidesInView === 4 && selectedIndex >= index
+          ? 'md:translate-y-0'
+          : maxSlidesInView === 4 && selectedIndex === index - 1
+            ? 'md:translate-y-16 lg:translate-y-8 xl:translate-y-5'
+            : maxSlidesInView === 4 && selectedIndex === index - 2
+              ? 'md:translate-y-16 xl:translate-y-10'
+              : maxSlidesInView === 4
+                ? 'md:translate-y-16 xl:translate-y-[3.75rem]'
+                : '',
         orientation === 'horizontal' ? 'pl-8' : 'pt-4',
         className,
       )}
