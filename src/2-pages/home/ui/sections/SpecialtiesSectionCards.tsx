@@ -1,13 +1,10 @@
 'use client';
 
-import parse from 'html-react-parser';
-import DOMPurify from 'isomorphic-dompurify';
-import Link from 'next/link';
-
 import { DimensionItem } from '~/shared/api';
 import { cn } from '~/shared/lib';
-import { Card, CardContent, CardHeader, CardTitle } from '~/shared/ui/Card';
 import { CarouselItem, useCarousel } from '~/shared/ui/Carousel';
+
+import { DimensionItemCard } from '~/entities/dimension-item';
 
 type Props = {
   items: DimensionItem[];
@@ -31,20 +28,7 @@ export function SpecialtiesSectionCards({ items }: Props) {
                 : 'md:translate-y-0',
           )}
         >
-          <Link
-            href={`specialties/${specialty.alias}`}
-            className="relative flex justify-center"
-          >
-            <Card className="md:max-w-80">
-              <CardHeader>
-                <CardTitle>{specialty.headings.primary}</CardTitle>
-              </CardHeader>
-              <CardContent className="line-clamp-12 text-justify md:line-clamp-10 md:hyphens-none md:text-left">
-                {specialty.content &&
-                  parse(DOMPurify.sanitize(specialty.content))}
-              </CardContent>
-            </Card>
-          </Link>
+          <DimensionItemCard item={specialty} parentAlias="specialties" />
         </CarouselItem>
       ))}
     </>
