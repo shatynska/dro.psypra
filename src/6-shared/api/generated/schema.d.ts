@@ -5,7 +5,22 @@
 
 export interface paths {
   '/api/pages/home/questions': {
-    get: operations['GetHomeQuestionsPageSectionController_execute'];
+    get: operations['GetHomeQuestionsSectionController_handle'];
+  };
+  '/api/pages/home/{dimension}': {
+    get: operations['GetHomeDimensionSectionController_handle'];
+  };
+  '/api/pages/dimensions/{dimension}/main': {
+    get: operations['GetDimensionMainSectionController_handle'];
+  };
+  '/api/pages/dimensions/{dimension}/{dimensionItem}/main': {
+    get: operations['GetDimensionItemMainSectionController_handle'];
+  };
+  '/api/pages/specialists/{specialist}/main': {
+    get: operations['GetSpecialistMainSectionController_handle'];
+  };
+  '/api/pages/specialists/{specialist}/brief': {
+    get: operations['GetSpecialistBriefSectionController_handle'];
   };
 }
 
@@ -13,55 +28,30 @@ export type webhooks = Record<string, never>;
 
 export interface components {
   schemas: {
-    PageSectionHeaderHeadingsResponseDto: {
-      /** @example Критерії пошуку */
+    SectionHeadingsDto: {
       primary: string;
-      /** @example Багато питань? */
       secondary: string;
     };
-    PageSectionHeaderWithHrefResponseDto: {
-      /**
-       * @example {
-       *   "primary": "Критерії пошуку",
-       *   "secondary": "Багато питань?"
-       * }
-       */
-      headings: components['schemas']['PageSectionHeaderHeadingsResponseDto'];
-      /** @example /#questions */
-      href: string;
+    SectionHeaderDto: {
+      headings: components['schemas']['SectionHeadingsDto'];
     };
-    HomeQuestionsPageSectionContentItemResponseDto: {
-      /** @example До кого звернутися? */
+    HomeQuestionsItemDto: {
       title: string;
-      /** @example /specialists */
       href: string;
     };
-    HomeQuestionsPageSectionContentResponseDto: {
-      /**
-       * @example [
-       *   {
-       *     "title": "До кого звернутися?",
-       *     "href": "/specialists"
-       *   },
-       *   {
-       *     "title": "З ким працюють?",
-       *     "href": "/ages"
-       *   }
-       * ]
-       */
-      items: components['schemas']['HomeQuestionsPageSectionContentItemResponseDto'][];
+    HomeQuestionsDto: {
+      items: components['schemas']['HomeQuestionsItemDto'][];
     };
-    HomeQuestionsPageSectionResponseDto: {
+    GetHomeQuestionsSectionResponse: {
       /**
        * @example {
        *   "headings": {
        *     "primary": "Критерії пошуку",
        *     "secondary": "Багато питань?"
-       *   },
-       *   "href": "/#questions"
+       *   }
        * }
        */
-      header: components['schemas']['PageSectionHeaderWithHrefResponseDto'];
+      header: components['schemas']['SectionHeaderDto'];
       /**
        * @example {
        *   "items": [
@@ -76,7 +66,213 @@ export interface components {
        *   ]
        * }
        */
-      content: components['schemas']['HomeQuestionsPageSectionContentResponseDto'];
+      content: components['schemas']['HomeQuestionsDto'];
+    };
+    SectionHeaderWithHrefDto: {
+      headings: components['schemas']['SectionHeadingsDto'];
+      href: string;
+    };
+    DimensionItemWithAliasAndHrefDto: {
+      alias: string;
+      href: string;
+      title: string;
+      description?: string;
+    };
+    DimensionItemsDto: {
+      items: components['schemas']['DimensionItemWithAliasAndHrefDto'][];
+    };
+    GetHomeDimensionSectionResponse: {
+      /**
+       * @example {
+       *   "headings": {
+       *     "primary": "Спеціальності",
+       *     "secondary": "Хто є хто?"
+       *   },
+       *   "href": "/specialties"
+       * }
+       */
+      header: components['schemas']['SectionHeaderWithHrefDto'];
+      /**
+       * @example {
+       *   "items": [
+       *     {
+       *       "alias": "psychologist",
+       *       "href": "/specialties/psychologist",
+       *       "title": "Психолог",
+       *       "description": "Це фахівець, який оцінює, діагно­стує і вивчає пове­дінку і розу­мові процеси. Деякі пси­хологи, такі як клі­нічні ..."
+       *     },
+       *     {
+       *       "alias": "psychotherapist",
+       *       "href": "/specialties/psychotherapist",
+       *       "title": "Психотерапевт",
+       *       "description": "Фахівець, який має повну вищу ос­віту за нап­рямом під­готовки ..."
+       *     }
+       *   ]
+       * }
+       */
+      content: components['schemas']['DimensionItemsDto'];
+    };
+    SectionHeaderWithParentLinkDto: {
+      headings: components['schemas']['SectionHeadingsDto'];
+      parentLink: components['schemas']['SectionHeaderWithHrefDto'];
+    };
+    GetDimensionMainSectionResponse: {
+      /**
+       * @example {
+       *   "headings": {
+       *     "primary": "Спеціальності",
+       *     "secondary": "Хто є хто?"
+       *   },
+       *   "parentLink": {
+       *     "headings": {
+       *       "primary": "Критерії пошуку",
+       *       "secondary": "Багато питань?"
+       *     },
+       *     "href": "/#questions"
+       *   }
+       * }
+       */
+      header: components['schemas']['SectionHeaderWithParentLinkDto'];
+      /**
+       * @example {
+       *   "items": [
+       *     {
+       *       "alias": "psychologist",
+       *       "href": "/specialties/psychologist",
+       *       "title": "Психолог",
+       *       "description": "Це фахівець, який оцінює, діагно­стує і вивчає пове­дінку і розу­мові процеси. Деякі пси­хологи, такі як клі­нічні ..."
+       *     },
+       *     {
+       *       "alias": "psychotherapist",
+       *       "href": "/specialties/psychotherapist",
+       *       "title": "Психотерапевт",
+       *       "description": "Фахівець, який має повну вищу ос­віту за нап­рямом під­готовки ..."
+       *     }
+       *   ]
+       * }
+       */
+      content: components['schemas']['DimensionItemsDto'];
+    };
+    DimensionItemDto: {
+      title: string;
+      description?: string;
+    };
+    GetDimensionItemMainSectionResponse: {
+      /**
+       * @example {
+       *   "headings": {
+       *     "primary": "Спеціальності",
+       *     "secondary": "Хто є хто?"
+       *   },
+       *   "parentLink": {
+       *     "headings": {
+       *       "primary": "Критерії пошуку",
+       *       "secondary": "Багато питань?"
+       *     },
+       *     "href": "/#questions"
+       *   }
+       * }
+       */
+      header: components['schemas']['SectionHeaderWithParentLinkDto'];
+      /**
+       * @example {
+       *   "title": "Психолог",
+       *   "description": "Це фахівець, який оцінює, діагно­стує і вивчає пове­дінку і розу­мові процеси. Деякі пси­хологи, такі як клі­нічні ..."
+       * }
+       */
+      content: components['schemas']['DimensionItemDto'];
+    };
+    SpecialistMainDto: {
+      firstName: string;
+      lastName: string;
+      specialties: string[];
+      phones: string[];
+      emails: string[];
+      websites: string[];
+    };
+    GetSpecialistMainSectionResponse: {
+      /**
+       * @example {
+       *   "headings": {
+       *     "primary": "Созанська Ірина",
+       *     "secondary": "Психотерапевт"
+       *   },
+       *   "parentLink": {
+       *     "headings": {
+       *       "primary": "Фахівці",
+       *       "secondary": "До кого звернутися?"
+       *     },
+       *     "href": "/specialists"
+       *   }
+       * }
+       */
+      header: components['schemas']['SectionHeaderWithParentLinkDto'];
+      content: components['schemas']['SpecialistMainDto'];
+    };
+    DimensionWithItemsForSpecialistDto: {
+      alias: string;
+      title: string;
+      items: string[];
+    };
+    DimensionsWithItemsForSpecialistDto: {
+      dimensions: components['schemas']['DimensionWithItemsForSpecialistDto'][];
+    };
+    GetSpecialistBriefSectionResponse: {
+      /**
+       * @example {
+       *   "headings": {
+       *     "primary": "Короткий огляд",
+       *     "secondary": "Досьє"
+       *   }
+       * }
+       */
+      header: components['schemas']['SectionHeaderDto'];
+      /**
+       * @example [
+       *   {
+       *     "dimensions": [
+       *       {
+       *         "alias": "specialties",
+       *         "title": "Спеціальності",
+       *         "items": [
+       *           "психолог",
+       *           "психотерапевт"
+       *         ]
+       *       },
+       *       {
+       *         "alias": "forms",
+       *         "title": "Форми роботи",
+       *         "items": [
+       *           "індивідуальна",
+       *           "сімейна"
+       *         ]
+       *       },
+       *       {
+       *         "alias": "ages",
+       *         "title": "Вікові групи",
+       *         "items": [
+       *           "18+",
+       *           "40+",
+       *           "60+"
+       *         ]
+       *       },
+       *       {
+       *         "alias": "terms",
+       *         "title": "Тривалість",
+       *         "items": [
+       *           "разові консультації"
+       *         ]
+       *       },
+       *       {
+       *         "alias": "approaches",
+       *         "title": "Напрями терапії",
+       *         "items": []
+       *       }
+       *     ]
+       *   }
+       * ]
+       */
+      content: components['schemas']['DimensionsWithItemsForSpecialistDto'];
     };
   };
   responses: never;
@@ -91,11 +287,107 @@ export type $defs = Record<string, never>;
 export type external = Record<string, never>;
 
 export interface operations {
-  GetHomeQuestionsPageSectionController_execute: {
+  GetHomeQuestionsSectionController_handle: {
     responses: {
       200: {
         content: {
-          'application/json': components['schemas']['HomeQuestionsPageSectionResponseDto'];
+          'application/json': components['schemas']['GetHomeQuestionsSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetHomeDimensionSectionController_handle: {
+    parameters: {
+      path: {
+        dimension: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetHomeDimensionSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetDimensionMainSectionController_handle: {
+    parameters: {
+      path: {
+        dimension: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetDimensionMainSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetDimensionItemMainSectionController_handle: {
+    parameters: {
+      path: {
+        dimension: string;
+        dimensionItem: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetDimensionItemMainSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetSpecialistMainSectionController_handle: {
+    parameters: {
+      path: {
+        specialist: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetSpecialistMainSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetSpecialistBriefSectionController_handle: {
+    parameters: {
+      path: {
+        specialist: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetSpecialistBriefSectionResponse'];
         };
       };
       404: {
