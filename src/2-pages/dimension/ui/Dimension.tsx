@@ -1,13 +1,9 @@
-import parse from 'html-react-parser';
-import DOMPurify from 'isomorphic-dompurify';
 import Link from 'next/link';
 
-import {
-  DimensionAlias,
-  useGetDimensionControllerExecuteSuspense,
-} from '~/shared/api';
-import { Article } from '~/shared/ui/Article';
+import { DimensionAlias, apiClient } from '~/shared/api';
 import { Section, SectionGroup } from '~/shared/ui/Section';
+
+import { DimensionItemArticle } from '~/entities/dimension-item';
 
 import { Posts } from '~/widgets/posts';
 import { Specialists } from '~/widgets/specialists';
@@ -16,20 +12,35 @@ type Props = {
   alias: DimensionAlias;
 };
 
-export function Dimension({ alias }: Props) {
-  const { headings, href, parentLink, items } =
-    useGetDimensionControllerExecuteSuspense(alias);
+export async function Dimension({ alias }: Props) {
+  const { data, error } = await apiClient.GET(
+    '/api/pages/dimensions/{dimension}/main',
+    {
+      params: {
+        path: { dimension: alias },
+      },
+    },
+  );
+
+  if (error) return;
+
+  const { header, content } = data;
 
   return (
     <>
       <div>
-        <Section headings={headings} parentLink={parentLink} type="main">
-          {items &&
-            items.map((item) => (
-              <Link key={item.alias} href={`${href}/${item.alias}`}>
-                <Article title={item.headings.primary}>
-                  {item.content && parse(DOMPurify.sanitize(item.content))}
-                </Article>
+        <Section
+          headings={header.headings}
+          parentLink={header.parentLink}
+          type="main"
+        >
+          {content.items &&
+            content.items.map((item) => (
+              <Link key={item.alias} href={item.href}>
+                <DimensionItemArticle
+                  title={item.title}
+                  content={item.description}
+                />
               </Link>
             ))}
         </Section>

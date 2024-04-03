@@ -1,12 +1,7 @@
-import parse from 'html-react-parser';
-import DOMPurify from 'isomorphic-dompurify';
-
-import {
-  DimensionAlias,
-  useGetDimensionItemControllerExecuteSuspense,
-} from '~/shared/api';
-import { Article } from '~/shared/ui/Article';
+import { DimensionAlias, apiClient } from '~/shared/api';
 import { Section, SectionGroup } from '~/shared/ui/Section';
+
+import { DimensionItemArticle } from '~/entities/dimension-item';
 
 import { Posts } from '~/widgets/posts';
 import { Specialists } from '~/widgets/specialists';
@@ -16,14 +11,29 @@ type Props = {
   itemAlias: string;
 };
 
-export function DimensionItem({ dimensionAlias, itemAlias }: Props) {
-  const { alias, headings, parentLink, content } =
-    useGetDimensionItemControllerExecuteSuspense(dimensionAlias, itemAlias);
+export async function DimensionItem({ dimensionAlias, itemAlias }: Props) {
+  const { data, error } = await apiClient.GET(
+    '/api/pages/dimensions/{dimension}/{dimensionItem}/main',
+    {
+      params: {
+        path: { dimension: dimensionAlias, dimensionItem: itemAlias },
+      },
+    },
+  );
+
+  if (error) return;
+
+  const { header, content } = data;
+
   return (
     <>
       <div>
-        <Section headings={headings} parentLink={parentLink} type="main">
-          <Article>{content && parse(DOMPurify.sanitize(content))}</Article>
+        <Section
+          headings={header.headings}
+          parentLink={header.parentLink}
+          type="main"
+        >
+          <DimensionItemArticle content={content.description} />
         </Section>
       </div>
       <SectionGroup>
