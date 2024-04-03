@@ -1,1 +1,1 @@
-export { DimensionItemCard } from './ui';
+export { DimensionItemArticle, DimensionItemCard } from './ui';
