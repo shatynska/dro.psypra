@@ -1,10 +1,9 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import { HTMLAttributes } from 'react';
 
-import { Specialist } from '~/shared/api';
 import { cn } from '~/shared/lib';
 
-import { SpecialistCard } from '.';
+import { Specialist, SpecialistCard } from './SpecialistCard';
 
 const specialistCardListVariants = cva(
   'grid gap-x-8 gap-y-8 md:gap-y-16 pb-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ',
@@ -23,11 +22,11 @@ const specialistCardListVariants = cva(
 
 type Props = HTMLAttributes<HTMLUListElement> &
   VariantProps<typeof specialistCardListVariants> & {
-    items: Specialist[];
+    specialists: Specialist[];
   };
 
 export function SpecialistCardList({
-  items,
+  specialists,
   direction,
   className,
   ...props
@@ -37,7 +36,7 @@ export function SpecialistCardList({
       className={cn(specialistCardListVariants({ direction }), className)}
       {...props}
     >
-      {items.map((specialist) => (
+      {specialists.map((specialist) => (
         <li className="relative" key={specialist.alias}>
           <SpecialistCard specialist={specialist} />
         </li>

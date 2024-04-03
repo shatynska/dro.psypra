@@ -1,9 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 import { AnchorHTMLAttributes } from 'react';
 
-import { Specialist } from '~/shared/api';
 import { cn } from '~/shared/lib';
 import {
   Card,
@@ -14,6 +11,13 @@ import {
 } from '~/shared/ui/Card';
 import ImageWithFallback from '~/shared/ui/ImageWithFallback';
 
+export type Specialist = {
+  alias: string;
+  href: string;
+  fullName: string;
+  specialties: string;
+};
+
 type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
   specialist: Specialist;
 };
@@ -21,7 +25,7 @@ type Props = AnchorHTMLAttributes<HTMLAnchorElement> & {
 export function SpecialistCard({ specialist, className, ...props }: Props) {
   return (
     <Link
-      href={`/specialists/${specialist.alias}`}
+      href={specialist.href}
       className={cn('relative flex justify-center', className)}
       {...props}
     >
@@ -33,14 +37,14 @@ export function SpecialistCard({ specialist, className, ...props }: Props) {
             height={320}
             srcFallback="/images/specialists/default.jpg"
             src={`/images/specialists/${specialist.alias}.jpg`}
-            alt={specialist.data.title}
+            alt={specialist.fullName}
             className="rounded-3xl"
             priority
           />
         </CardContent>
         <CardHeader>
-          <CardTitle>{specialist.data.title}</CardTitle>
-          <CardSubTitle>{specialist.data.specialties.join(', ')}</CardSubTitle>
+          <CardTitle>{specialist.fullName}</CardTitle>
+          <CardSubTitle>{specialist.specialties}</CardSubTitle>
         </CardHeader>
       </Card>
     </Link>
