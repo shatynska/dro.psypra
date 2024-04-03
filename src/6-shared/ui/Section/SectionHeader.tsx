@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { Headings } from '../../api';
 import { cn } from '../../lib';
 
-const sectionHeaderVariants = cva('*:w-full h-full', {
+const sectionHeaderVariants = cva('*:w-full h-full first-letter:uppercase', {
   variants: {
     level: {
       pageTitle:
