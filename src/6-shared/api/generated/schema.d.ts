@@ -7,6 +7,9 @@ export interface paths {
   '/api/pages/home/questions': {
     get: operations['GetHomeQuestionsSectionController_handle'];
   };
+  '/api/pages/sections/{section}/header': {
+    get: operations['GetSectionHeaderWithHrefController_handle'];
+  };
   '/api/pages/home/{dimension}': {
     get: operations['GetHomeDimensionSectionController_handle'];
   };
@@ -21,6 +24,9 @@ export interface paths {
   };
   '/api/pages/specialists/{specialist}/brief': {
     get: operations['GetSpecialistBriefSectionController_handle'];
+  };
+  '/api/pages/specialists': {
+    get: operations['GetSpecialistsController_handle'];
   };
 }
 
@@ -67,6 +73,17 @@ export interface components {
        * }
        */
       content: components['schemas']['HomeQuestionsDto'];
+    };
+    GetSectionHeaderWithHrefResponse: {
+      /**
+       * @example {
+       *   "primary": "Фахівці",
+       *   "secondary": "До кого звернутися?"
+       * }
+       */
+      headings: components['schemas']['SectionHeadingsDto'];
+      /** @example /specialists */
+      href: string;
     };
     SectionHeaderWithHrefDto: {
       headings: components['schemas']['SectionHeadingsDto'];
@@ -183,12 +200,11 @@ export interface components {
       content: components['schemas']['DimensionItemDto'];
     };
     SpecialistMainDto: {
-      firstName: string;
-      lastName: string;
-      specialties: string[];
       phones: string[];
       emails: string[];
       websites: string[];
+      fullName: string;
+      specialties: string;
     };
     GetSpecialistMainSectionResponse: {
       /**
@@ -207,6 +223,21 @@ export interface components {
        * }
        */
       header: components['schemas']['SectionHeaderWithParentLinkDto'];
+      /**
+       * @example {
+       *   "fullName": "Берчук Володимир",
+       *   "specialties": "психолог, психотерапевт",
+       *   "phones": [
+       *     "+380762819234"
+       *   ],
+       *   "emails": [
+       *     "berchuk@gmail.com"
+       *   ],
+       *   "websites": [
+       *     "https://berchuk.com.ua"
+       *   ]
+       * }
+       */
       content: components['schemas']['SpecialistMainDto'];
     };
     DimensionWithItemsForSpecialistDto: {
@@ -274,6 +305,37 @@ export interface components {
        */
       content: components['schemas']['DimensionsWithItemsForSpecialistDto'];
     };
+    SpecialistEssentialWithAliasAndHrefDto: {
+      alias: string;
+      href: string;
+      fullName: string;
+      specialties: string;
+    };
+    GetSpecialistsResponse: {
+      /**
+       * @example [
+       *   {
+       *     "fullName": "Берчук Володимир",
+       *     "specialties": "психолог, психотерапевт",
+       *     "alias": "berchuk",
+       *     "href": "/specialists/berchuk"
+       *   },
+       *   {
+       *     "fullName": "Лех Наталя",
+       *     "specialties": "психіатр, психотерапевт",
+       *     "alias": "lekh",
+       *     "href": "/specialists/lekh"
+       *   },
+       *   {
+       *     "fullName": "Созанська Ірина",
+       *     "specialties": "психотерапевт",
+       *     "alias": "sozanska",
+       *     "href": "/specialists/sozanska"
+       *   }
+       * ]
+       */
+      specialists: components['schemas']['SpecialistEssentialWithAliasAndHrefDto'][];
+    };
   };
   responses: never;
   parameters: never;
@@ -292,6 +354,25 @@ export interface operations {
       200: {
         content: {
           'application/json': components['schemas']['GetHomeQuestionsSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetSectionHeaderWithHrefController_handle: {
+    parameters: {
+      path: {
+        section: string;
+      };
+    };
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetSectionHeaderWithHrefResponse'];
         };
       };
       404: {
@@ -388,6 +469,20 @@ export interface operations {
       200: {
         content: {
           'application/json': components['schemas']['GetSpecialistBriefSectionResponse'];
+        };
+      };
+      404: {
+        content: {
+          'application/json': Record<string, never>;
+        };
+      };
+    };
+  };
+  GetSpecialistsController_handle: {
+    responses: {
+      200: {
+        content: {
+          'application/json': components['schemas']['GetSpecialistsResponse'];
         };
       };
       404: {
