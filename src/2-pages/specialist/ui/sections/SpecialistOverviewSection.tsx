@@ -10,9 +10,8 @@ export async function SpecialistOverviewSection({ alias }: Props) {
   const { data, error } = await apiClient.GET(
     '/api/pages/specialists/{specialist}/main',
     {
-      params: {
-        path: { specialist: alias },
-      },
+      params: { path: { specialist: alias } },
+      next: { tags: [`specialists/${alias}/main`] },
     },
   );
 
