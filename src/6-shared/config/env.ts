@@ -6,8 +6,6 @@ export const env = createEnv({
     API_BASE_URL: z.string().url(),
     REVALIDATE_TOKEN: z.string(),
   },
-  runtimeEnv: {
-    API_BASE_URL: process.env.API_BASE_URL,
-    REVALIDATE_TOKEN: process.env.REVALIDATE_TOKEN,
-  },
+  experimental__runtimeEnv: {},
+  skipValidation: process.env.npm_lifecycle_event === 'lint',
 });
