@@ -47,7 +47,6 @@ jobs:
         with:
           envkey_API_BASE_URL: ${{ secrets.API_BASE_URL }}
           envkey_REVALIDATE_TOKEN: ${{ secrets.REVALIDATE_TOKEN }}
-          file_name: .env.local
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
